@@ -23,5 +23,10 @@
     "npm"
   ],
   "author": "cc",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">= 8.16.0",
+    "npm": ">= 6.9.0"
+ },
+ "os" : [ "darwin", "linux", "macos", "win64", "!win32" ]
 }
