@@ -1,18 +1,11 @@
 {
-  "name": "puppeteer",
+  "name": "demo",
   "version": "1.0.0",
-  "description": "demo",
+  "description": "demo study",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "mysql": "^2.18.1",
-    "node-rsa": "^1.1.1",
-    "puppeteer": "^10.4.0",
-    "puppeteer-core": "^10.4.0"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/chao921125/"
