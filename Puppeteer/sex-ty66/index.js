@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+// 存储数据库使用
 const mysql = require("mysql");
 let connection = mysql.createConnection({
     host: "localhost",
@@ -7,7 +8,7 @@ let connection = mysql.createConnection({
     password: "huangchao",
     database: 'test_node'
 });
-connection.connect();
+// connection.connect();
 
 // 声明全局变量
 let pageNum = 1;
@@ -22,7 +23,7 @@ const optionsLaunch = {
   },
   slowMo: 250,
   timeout: 0,
-  executablePath: "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
+  // executablePath: "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
 }
 
 // 主函数调用
