@@ -6,16 +6,18 @@ const puppeteer = require("puppeteer");
 
 const optionsLaunch = {
     headless: false,
-    devtools: true,
+    devtools: false,
     defaultViewport: {
         width: 1200,
         height: 900
     },
     slowMo: 250,
     timeout: 0,
-    product: "chrome",
+    // product: "chrome",
+    ignoreHTTPSErrors: true,
+    ignoreDefaultArgs: ["--enable-automation"],
     // channel: "chrome",
-    executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 };
 
 ;(async () => {
@@ -24,42 +26,53 @@ const optionsLaunch = {
     await initBrowser();
 });
 
-let pageSize = 1;
-let pageUrl = "https://www.gushici.net/shici/"; // index_2.html
-let pageNext = false;
-const breakNum = 2; // 101
+// 12-08
+// 合集 304 https://m2.5y1rsxmzh.net/pw/thread.php?fid=3
+// 国产 62 https://m2.5y1rsxmzh.net/pw/thread.php?fid=110
+let pageUrl = "https://m2.5y1rsxmzh.net/pw/thread.php?fid=110";
+let pageSize = 62;
+let isClose = false;
 
 const initBrowser = async () => {
-    const browser = await puppeteer.launch(optionsLaunch);
-    const page = await browser.newPage();
-    for (let i = 0; i < pageSize; i++, pageSize++) {
-        if (i === 0) {
-            await page.goto(pageUrl);
-            await getData(page);
-        } else if (pageSize === breakNum) {
-            await browser.close();
-            break;
-        } else {
-            await page.goto(pageUrl + `index_${pageSize}.html`);
-            await getData(page);
-        }
+    // await page.evaluateOnNewDocument(() => {
+    //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
+    // });
+    for (let i = 4; i <= pageSize; i++) {
+        const browser = await puppeteer.launch(optionsLaunch);
+        const page = await browser.newPage();
+        await page.goto(pageUrl + `&page=${i}`);
+        await getData(page, browser, i);
+        // await browser.close();
     }
-    // await browser.close();
 }
 
-const getData = async (page) => {
-    await page.waitForSelector("body > div.main > div.left > div.gushici");
+const getData = async (page, browser, index) => {
+    await page.waitForSelector("#ajaxtable");
     // let divArray = await page.$$("body > div.main > div.left > div.gushici");
-
-    let divLength = await page.$$eval("body > div.main > div.left > div.gushici", el => el.length);
-    for (let i = 2; i <= divLength+1; i++) {
-        const title = await page.$eval(`body > div.main > div.left > div.gushici:nth-child(${i}) > div.gushici-box > p.tit > a > b`, el => el.innerText);
-        const dynasty = await page.$eval(`body > div.main > div.left > div.gushici:nth-child(${i}) > div.gushici-box > p.source > a:nth-child(1)`, el => el.innerText);
-        const person = await page.$eval(`body > div.main > div.left > div.gushici:nth-child(${i}) > div.gushici-box > p.source > a:nth-child(3)`, el => el.innerText);
-        const text = await page.$eval(`body > div.main > div.left > div.gushici:nth-child(${i}) > div.gushici-box > div.gushici-box-text`, el => el.innerText);
-        console.log(title);
-        console.log(person + ": " + dynasty);
-        console.log(text);
-        console.log(" \n ");
+    // 
+    let listLength = await page.$$eval("#ajaxtable > tbody:nth-child(2) > tr.tr3", el => el.length);
+    let start = 1;
+    if (index === 1) {
+        start = 11;
+    }
+    for (let i = start; i <= listLength; i++) {
+        const pageDetail = await browser.newPage();
+        try {
+            let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
+            await pageDetail.goto(linkHref);
+            let downHref = await pageDetail.$eval("#read_tpc > a", el => el.href);
+            await pageDetail.goto(downHref);
+            await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
+            pageDetail.close();
+            let pageSizeAll = await browser.pages();
+            if (pageSizeAll.length > 4) {
+                for (let j = 3; j <= pageSizeAll.length; j++) {
+                    pageSizeAll[j].close();
+                }
+            }
+        } catch(e) {
+            pageDetail.close();
+            continue;
+        }
     }
 }
