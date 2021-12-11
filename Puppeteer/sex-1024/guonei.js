@@ -27,8 +27,6 @@ const optionsLaunch = {
 });
 
 // 12-08
-// 合集 304 https://m2.5y1rsxmzh.net/pw/thread.php?fid=3
-// 国产 62 https://m2.5y1rsxmzh.net/pw/thread.php?fid=110
 let pageUrl = "https://m2.5y1rsxmzh.net/pw/thread.php?fid=110";
 let pageSize = 63;
 let isClose = false;

@@ -27,7 +27,7 @@ const optionsLaunch = {
 });
 
 // 12-08
-let pageUrl = "https://m2.5y1rsxmzh.com/pw/thread.php?fid=3";
+let pageUrl = "https://m2.5y1rsxmzh.net/pw/thread.php?fid=110";
 let pageSize = 63;
 let isClose = false;
 
@@ -58,12 +58,11 @@ const getData = async (page, browser, index) => {
         const pageDetail = await browser.newPage();
         try {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
-            console.log(linkHref);
-            // await pageDetail.goto(linkHref);
-            // let downHref = await pageDetail.$eval("#read_tpc > a", el => el.href);
-            // await pageDetail.goto(downHref);
-            // await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
-            // pageDetail.close();
+            await pageDetail.goto(linkHref);
+            let downHref = await pageDetail.$eval("#read_tpc > a", el => el.href);
+            await pageDetail.goto(downHref);
+            await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
+            pageDetail.close();
             // let pageSizeAll = await browser.pages();
             // if (pageSizeAll.length > 4) {
             //     for (let j = 3; j <= pageSizeAll.length; j++) {
@@ -71,7 +70,7 @@ const getData = async (page, browser, index) => {
             //     }
             // }
         } catch(e) {
-            // pageDetail.close();
+            pageDetail.close();
             continue;
         }
     }
