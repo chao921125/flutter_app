@@ -27,19 +27,19 @@ const optionsLaunch = {
 });
 
 // 12-12
-let pageUrl = "https://m2.5y1rsxmzh.net/pw/thread.php?fid=110";
+let pageUrl = "https://hjd2048.com/2048/thread.php";
 let pageSize = 3;
-let isClose = false;
+let pageStart = 1;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    for (let i = 1; i <= pageSize; i++) {
+    for (let i = pageStart; i <= pageSize; i++) {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
-        await page.goto(pageUrl + `&page=${i}`);
+        await page.goto(pageUrl + `?fid-15-page-${i}.html`);
         await getData(page, browser, i);
         await browser.close();
     }

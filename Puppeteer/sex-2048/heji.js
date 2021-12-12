@@ -27,9 +27,9 @@ const optionsLaunch = {
 });
 
 // 12-08
-let pageUrl = "https://m2.5y1rsxmzh.com/pw/thread.php?fid=3";
+let pageUrl = "https://hjd2048.com/2048/thread.php";
 let pageSize = 305;
-let isClose = false;
+let pageStart = 1;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
@@ -39,7 +39,7 @@ const initBrowser = async () => {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
-        await page.goto(pageUrl + `&page=${i}`);
+        await page.goto(pageUrl + `?fid-3-page-${i}.html`);
         await getData(page, browser, i);
         await browser.close();
     }
@@ -50,14 +50,14 @@ const getData = async (page, browser, index) => {
     let listLength = await page.$$eval("#ajaxtable > tbody:nth-child(2) > tr.tr3", el => el.length);
     let start = 1;
     if (index === 1) {
-        start = 11;
+        start = 10;
     }
     for (let i = start; i <= listLength; i++) {
         const pageDetail = await browser.newPage();
         try {
-            let content = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.innerText);
+            let content = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.innerText);
             if (content.includes("國產") || content.includes("国产")) {
-                let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
+                let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
                 await pageDetail.goto(linkHref);
                 let downHrefArr = await pageDetail.$$eval("#read_tpc > a", el => {
                     let hrefArr = [];

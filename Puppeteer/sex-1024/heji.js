@@ -29,13 +29,13 @@ const optionsLaunch = {
 // 12-08
 let pageUrl = "https://m2.5y1rsxmzh.com/pw/thread.php?fid=3";
 let pageSize = 305;
-let isClose = false;
+let pageStart = 1; // 14
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    for (let i = 3; i <= pageSize; i++) {
+    for (let i = pageStart; i <= pageSize; i++) {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
