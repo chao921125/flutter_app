@@ -35,13 +35,13 @@ const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    for (let i = 1; i <= pageSize; i++) {
+    for (let i = 3; i <= pageSize; i++) {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
         await page.goto(pageUrl + `&page=${i}`);
         await getData(page, browser, i);
-        // await browser.close();
+        await browser.close();
     }
 }
 
@@ -62,7 +62,9 @@ const getData = async (page, browser, index) => {
                 let downHrefArr = await pageDetail.$$eval("#read_tpc > a", el => {
                     let hrefArr = [];
                     for (let j = 0; j < el.length; j++) {
-                        hrefArr.push(el[j].getAttribute("href"));
+                        if (el[j].getAttribute("href").includes("torrent")) {
+                            hrefArr.push(el[j].getAttribute("href"));
+                        }
                     }
                     return hrefArr;
                 });
@@ -82,4 +84,5 @@ const getData = async (page, browser, index) => {
             continue;
         }
     }
+    await page.waitFor(3000);
 }
