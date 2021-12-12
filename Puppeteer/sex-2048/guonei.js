@@ -26,29 +26,27 @@ const optionsLaunch = {
     await initBrowser();
 });
 
-// 12-08
+// 12-12
 let pageUrl = "https://m2.5y1rsxmzh.net/pw/thread.php?fid=110";
-let pageSize = 63;
+let pageSize = 3;
 let isClose = false;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    const browser = await puppeteer.launch(optionsLaunch);
-    const page = await browser.newPage();
-    for (let i = 28; i <= pageSize; i++) {
+    for (let i = 1; i <= pageSize; i++) {
+        const browser = await puppeteer.launch(optionsLaunch);
+        const page = await browser.newPage();
         console.log(i);
         await page.goto(pageUrl + `&page=${i}`);
         await getData(page, browser, i);
-        // await browser.close();
+        await browser.close();
     }
 }
 
 const getData = async (page, browser, index) => {
     await page.waitForSelector("#ajaxtable");
-    // let divArray = await page.$$("body > div.main > div.left > div.gushici");
-    // 
     let listLength = await page.$$eval("#ajaxtable > tbody:nth-child(2) > tr.tr3", el => el.length);
     let start = 1;
     if (index === 1) {
@@ -62,16 +60,11 @@ const getData = async (page, browser, index) => {
             let downHref = await pageDetail.$eval("#read_tpc > a", el => el.href);
             await pageDetail.goto(downHref);
             await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
-            pageDetail.close();
-            // let pageSizeAll = await browser.pages();
-            // if (pageSizeAll.length > 4) {
-            //     for (let j = 3; j <= pageSizeAll.length; j++) {
-            //         pageSizeAll[j].close();
-            //     }
-            // }
+            await pageDetail.close();
         } catch(e) {
-            pageDetail.close();
+            await pageDetail.close();
             continue;
         }
+        await page.waitFor(3000);
     }
 }
