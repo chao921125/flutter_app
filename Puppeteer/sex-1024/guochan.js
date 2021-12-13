@@ -19,6 +19,10 @@ const optionsLaunch = {
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 };
+const optionsPage = {
+    timeout: 0,
+    waitUntil: "domcontentloaded"
+};
 
 ;(async () => {
     await initBrowser();
@@ -39,7 +43,7 @@ const initBrowser = async () => {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
-        await page.goto(pageUrl + `&page=${i}`);
+        await page.goto(pageUrl + `&page=${i}`, optionsPage);
         await getData(page, browser, i);
         await browser.close();
     }
@@ -56,9 +60,9 @@ const getData = async (page, browser, index) => {
         const pageDetail = await browser.newPage();
         try {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
-            await pageDetail.goto(linkHref);
+            await pageDetail.goto(linkHref, optionsPage);
             let downHref = await pageDetail.$eval("#read_tpc > a", el => el.href);
-            await pageDetail.goto(downHref);
+            await pageDetail.goto(downHref, optionsPage);
             await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
             await pageDetail.close();
         } catch(e) {
