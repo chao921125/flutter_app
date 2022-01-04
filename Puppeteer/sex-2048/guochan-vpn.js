@@ -45,6 +45,7 @@ const initBrowser = async () => {
         console.log(i);
         await page.goto(pageUrl + `?fid-15-page-${i}.html`, optionsPage);
         await getData(page, browser, i);
+        await page.waitFor(3000);
         await browser.close();
     }
 }
