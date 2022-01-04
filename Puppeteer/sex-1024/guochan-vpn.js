@@ -30,9 +30,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 12-12
-let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 3315;
+// 1-1
+let pageUrl = "https://m2.5y1rsxmzh.net/pw/thread.php?fid=110";
+let pageSize = 31;
 let pageStart = 1;
 
 const initBrowser = async () => {
@@ -43,7 +43,7 @@ const initBrowser = async () => {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
-        await page.goto(pageUrl + `?fid-15-page-${i}.html`, optionsPage);
+        await page.goto(pageUrl + `&page=${i}`, optionsPage);
         await getData(page, browser, i);
         await browser.close();
     }
@@ -54,22 +54,24 @@ const getData = async (page, browser, index) => {
     let listLength = await page.$$eval("#ajaxtable > tbody:nth-child(2) > tr.tr3", el => el.length);
     let start = 1;
     if (index === 1) {
-        start = 10;
+        start = 11;
     }
     for (let i = start; i <= listLength; i++) {
         const pageDetail = await browser.newPage();
         try {
-            let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
+            let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
             await pageDetail.goto(linkHref, optionsPage);
-            let downHref = await pageDetail.$$eval("#read_tpc > a", el => {
+            let downHref = await pageDetail.$eval("#read_tpc > a", el => {
+                let hrefArr = [];
                 for (let j = 0; j < el.length; j++) {
-                    if (el[j].getAttribute("href").includes("down.dataaps")) {
-                        return el[j].getAttribute("href");
+                    if (el[j].getAttribute("href").includes("torrent")) {
+                        hrefArr.push(el[j].getAttribute("href"));
                     }
                 }
+                return hrefArr;
             });
             await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.click("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
+            await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
