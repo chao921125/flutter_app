@@ -30,10 +30,10 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 12-08
-let pageUrl = "https://hjd2048.com/2048/thread.php";
+// 12-12
+let pageUrl = "https://m2.5y1rsxmzh.com/pw/thread.php?fid=3";
 let pageSize = 305;
-let pageStart = 1;
+let pageStart = 1; // 14
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
@@ -43,7 +43,7 @@ const initBrowser = async () => {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
-        await page.goto(pageUrl + `?fid-3-page-${i}.html`, optionsPage);
+        await page.goto(pageUrl + `&page=${i}`, optionsPage);
         await getData(page, browser, i);
         await browser.close();
     }
@@ -54,19 +54,19 @@ const getData = async (page, browser, index) => {
     let listLength = await page.$$eval("#ajaxtable > tbody:nth-child(2) > tr.tr3", el => el.length);
     let start = 1;
     if (index === 1) {
-        start = 10;
+        start = 11;
     }
     for (let i = start; i <= listLength; i++) {
         const pageDetail = await browser.newPage();
         try {
-            let content = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.innerText);
+            let content = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.innerText);
             if (content.includes("國產") || content.includes("国产")) {
-                let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
+                let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
                 await pageDetail.goto(linkHref, optionsPage);
                 let downHrefArr = await pageDetail.$$eval("#read_tpc > a", el => {
                     let hrefArr = [];
                     for (let j = 0; j < el.length; j++) {
-                        if (el[j].getAttribute("href").includes("down.dataaps")) {
+                        if (el[j].getAttribute("href").includes("torrent")) {
                             hrefArr.push(el[j].getAttribute("href"));
                         }
                     }
@@ -75,7 +75,7 @@ const getData = async (page, browser, index) => {
                 for (const downHref of downHrefArr) {
                     const pageDownload = await browser.newPage();
                     await pageDownload.goto(downHref, optionsPage);
-                    await pageDownload.click("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
+                    await pageDownload.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
                     await pageDownload.close();
                 }
                 await pageDetail.close();
