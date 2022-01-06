@@ -1,3 +1,14 @@
+document.querySelector("#normalthread_2438491 > tr > th > a.s.xst")
+// http://thzthzthz.cc/thread-213795-x-1.html
+http://thzthzthz.cc/forum-60-x.html
+
+document.querySelector("#pid22969610 > tbody > tr:nth-child(1) > td.plc > div.pct > div > div.t_fsz > table > tbody > tr")
+document.querySelector("#attach_561784 > a")
+// torrent
+
+
+document.querySelector("#fwin_content_imc_attachad > div > div:nth-child(3) > div:nth-child(2) > a")
+
 const puppeteer = require("puppeteer");
 const mysql = require("mysql");
 
