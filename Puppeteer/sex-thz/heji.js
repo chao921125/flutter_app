@@ -73,7 +73,7 @@ const getData = async (page, browser, index) => {
             // });
             let downHref = await page.$eval(`#postlist div.pct div.t_fsz table tr td.t_f a`, el => el.href);
             await pageDetail.goto(downHref, optionsPage);
-            // await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
+            await pageDetail.click("body > div.uk-container-center.uk-container > div > div > div > div > div > div.uk-text-center.uk-margin-large-top.uk-margin-bottom > div:nth-child(4) > div > a");
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();

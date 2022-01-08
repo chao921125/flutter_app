@@ -31,7 +31,7 @@ const optionsPage = {
 });
 
 // 12-12
-let pageUrl = "https://m2.5y1rsxmzh.com/pw/thread.php?fid=3";
+let pageUrl = "http://a11.qcyghfzh.rocks/pw/thread.php?fid=3";
 let pageSize = 305;
 let pageStart = 1; // 14
 
