@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 12-12
 let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 3447;
+let pageSize = 3466;
 let pageStart = 1;
 
 const initBrowser = async () => {
@@ -63,7 +63,7 @@ const getData = async (page, browser, index) => {
         try {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
             await pageDetail.goto(linkHref, optionsPage);
-            let downHref = await pageDetail.$eval("#read_tpc > a", el => {
+            let downHref = await pageDetail.$$eval("#read_tpc > a", el => {
                 for (let j = 0; j < el.length; j++) {
                     if (el[j].getAttribute("href").includes("down.dataaps")) {
                         return el[j].getAttribute("href");
