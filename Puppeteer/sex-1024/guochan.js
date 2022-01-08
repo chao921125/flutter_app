@@ -32,14 +32,15 @@ const optionsPage = {
 
 // 1-1
 let pageUrl = "http://a11.qcyghfzh.rocks/pw/thread.php?fid=110";
-let pageSize = 31;
+let pageSize = 60;
 let pageStart = 1;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    for (let i = pageStart; i <= pageSize; i++) {
+    // for (let i = pageStart; i <= pageSize; i++) {
+    for (let i = pageSize; i >= pageStart; i--) {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
@@ -62,18 +63,18 @@ const getData = async (page, browser, index) => {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
             await pageDetail.goto(linkHref, optionsPage);
             let downHref = await pageDetail.$eval("#read_tpc > a", el => {
-                let hrefArr = [];
                 for (let j = 0; j < el.length; j++) {
                     if (el[j].getAttribute("href").includes("torrent")) {
-                        hrefArr.push(el[j].getAttribute("href"));
+                        return el[j].getAttribute("href");
                     }
                 }
-                return hrefArr;
             });
+            console.log("get download url {}", downHref);
             await pageDetail.goto(downHref, optionsPage);
             await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
             await pageDetail.close();
         } catch(e) {
+            console.log("get download url error {}", e);
             await pageDetail.close();
             continue;
         }

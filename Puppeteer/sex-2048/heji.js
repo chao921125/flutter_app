@@ -40,7 +40,7 @@ const initBrowser = async () => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
     // for (let i = pageStart; i <= pageSize; i++) {
-    for (let i = pageSize; i <= pageStart; i--) {
+    for (let i = pageSize; i >= pageStart; i--) {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
@@ -64,7 +64,7 @@ const getData = async (page, browser, index) => {
             if (content.includes("國產") || content.includes("国产")) {
                 let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
                 await pageDetail.goto(linkHref, optionsPage);
-                let downHrefArr = await pageDetail.$$eval("#read_tpc > a", el => {
+                let downHrefArr = await pageDetail.$eval("#read_tpc > a", el => {
                     let hrefArr = [];
                     for (let j = 0; j < el.length; j++) {
                         if (el[j].getAttribute("href").includes("down.dataaps")) {

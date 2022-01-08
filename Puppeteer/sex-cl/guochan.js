@@ -39,7 +39,8 @@ const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    for (let i = pageStart; i <= pageSize; i++) {
+    // for (let i = pageStart; i <= pageSize; i++) {
+    for (let i = pageSize; i >= pageStart; i--) {
         const browser = await puppeteer.launch(optionsLaunch);
         const page = await browser.newPage();
         console.log(i);
