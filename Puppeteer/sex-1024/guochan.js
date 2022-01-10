@@ -46,6 +46,7 @@ const initBrowser = async () => {
         console.log(i);
         await page.goto(pageUrl + `&page=${i}`, optionsPage);
         await getData(page, browser, i);
+        await page.waitFor(3000);
         await browser.close();
     }
 }
@@ -62,7 +63,7 @@ const getData = async (page, browser, index) => {
         try {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
             await pageDetail.goto(linkHref, optionsPage);
-            let downHref = await pageDetail.$eval("#read_tpc > a", el => {
+            let downHref = await pageDetail.$$eval("#read_tpc > a", el => {
                 for (let j = 0; j < el.length; j++) {
                     if (el[j].getAttribute("href").includes("torrent")) {
                         return el[j].getAttribute("href");

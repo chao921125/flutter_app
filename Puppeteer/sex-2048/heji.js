@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 12-08
 let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 795;
+let pageSize = 798;
 let pageStart = 1;
 
 const initBrowser = async () => {
@@ -46,6 +46,7 @@ const initBrowser = async () => {
         console.log(i);
         await page.goto(pageUrl + `?fid-3-page-${i}.html`, optionsPage);
         await getData(page, browser, i);
+        await page.waitFor(3000);
         await browser.close();
     }
 }
@@ -64,10 +65,10 @@ const getData = async (page, browser, index) => {
             if (content.includes("國產") || content.includes("国产")) {
                 let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
                 await pageDetail.goto(linkHref, optionsPage);
-                let downHrefArr = await pageDetail.$eval("#read_tpc > a", el => {
+                let downHrefArr = await pageDetail.$$eval("#read_tpc > a", el => {
                     let hrefArr = [];
                     for (let j = 0; j < el.length; j++) {
-                        if (el[j].getAttribute("href").includes("down.dataaps")) {
+                        if (el[j].getAttribute("href").includes("list.php")) {
                             hrefArr.push(el[j].getAttribute("href"));
                         }
                     }
