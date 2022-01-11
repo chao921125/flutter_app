@@ -30,9 +30,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 1-7
+// 1-10
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 26;
+let pageSize = 17;
 let pageStart = 1;
 
 const initBrowser = async () => {
