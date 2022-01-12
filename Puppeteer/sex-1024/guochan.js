@@ -31,8 +31,8 @@ const optionsPage = {
 });
 
 // 1-1
-let pageUrl = "http://a11.qcyghfzh.rocks/pw/thread.php?fid=110";
-let pageSize = 60;
+let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
+let pageSize = 38;
 let pageStart = 1;
 
 const initBrowser = async () => {
