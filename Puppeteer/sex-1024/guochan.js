@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 1-1
 let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
-let pageSize = 19;
+let pageSize = 13;
 let pageStart = 1;
 
 const initBrowser = async () => {
