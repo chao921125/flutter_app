@@ -32,22 +32,29 @@ const optionsPage = {
 
 // 1-7
 let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 3465;
+let pageSize = 3517;
 let pageStart = 1;
+let tempPage = 0;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    // for (let i = pageStart; i <= pageSize; i++) {
-    for (let i = pageSize; i >= pageStart; i--) {
-        const browser = await puppeteer.launch(optionsLaunch);
-        const page = await browser.newPage();
-        console.log(i);
-        await page.goto(pageUrl + `?fid-15-page-${i}.html`, optionsPage);
-        await getData(page, browser, i);
-        await page.waitFor(3000);
-        await browser.close();
+    try {
+        // for (let i = pageStart; i <= pageSize; i++) {
+        for (let i = pageSize; i >= pageStart; i--) {
+            const browser = await puppeteer.launch(optionsLaunch);
+            const page = await browser.newPage();
+            console.log(i);
+            tempPage = i;
+            await page.goto(pageUrl + `?fid-15-page-${i}.html`, optionsPage);
+            await getData(page, browser, i);
+            await page.waitFor(3000);
+            await browser.close();
+        }
+    } catch (error) {
+        pageSize = tempPage;
+        await initBrowser();
     }
 }
 
