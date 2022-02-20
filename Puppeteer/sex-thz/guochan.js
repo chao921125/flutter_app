@@ -34,19 +34,25 @@ const optionsPage = {
 let pageUrl = "http://thzthzthz.cc/";
 let pageSize = 1;
 let pageStart = 1;
+let tempPage = 0;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    // for (let i = pageStart; i <= pageSize; i++) {
-    for (let i = pageSize; i >= pageStart; i--) {
-        const browser = await puppeteer.launch(optionsLaunch);
-        const page = await browser.newPage();
-        console.log(i);
-        await page.goto(pageUrl + `forum-60-${i}.html`, optionsPage);
-        await getData(page, browser, i);
-        await browser.close();
+    try {
+        // for (let i = pageStart; i <= pageSize; i++) {
+        for (let i = pageSize; i >= pageStart; i--) {
+            const browser = await puppeteer.launch(optionsLaunch);
+            const page = await browser.newPage();
+            console.log(i);
+            await page.goto(pageUrl + `forum-60-${i}.html`, optionsPage);
+            await getData(page, browser, i);
+            await browser.close();
+        }
+    } catch (error) {
+        pageSize = tempPage;
+        await initBrowser();
     }
 }
 

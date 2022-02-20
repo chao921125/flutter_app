@@ -34,20 +34,26 @@ const optionsPage = {
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
 let pageSize = 17;
 let pageStart = 1;
+let tempPage = 0;
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    // for (let i = pageStart; i <= pageSize; i++) {
-    for (let i = pageSize; i >= pageStart; i--) {
-        const browser = await puppeteer.launch(optionsLaunch);
-        const page = await browser.newPage();
-        console.log(i);
-        await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
-        await getData(page, browser, i);
-        await page.waitFor(3000);
-        await browser.close();
+    try {
+        // for (let i = pageStart; i <= pageSize; i++) {
+        for (let i = pageSize; i >= pageStart; i--) {
+            const browser = await puppeteer.launch(optionsLaunch);
+            const page = await browser.newPage();
+            console.log(i);
+            await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
+            await getData(page, browser, i);
+            await page.waitFor(3000);
+            await browser.close();
+        }
+    } catch (error) {
+        pageSize = tempPage;
+        await initBrowser();
     }
 }
 
