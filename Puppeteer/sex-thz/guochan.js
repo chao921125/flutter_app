@@ -30,7 +30,7 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 1-1
+// 2022 01-01
 let pageUrl = "http://thzthzthz.cc/";
 let pageSize = 1;
 let pageStart = 1;

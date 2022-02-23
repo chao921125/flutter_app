@@ -30,7 +30,7 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 1-15
+// 2022 01-15
 let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
 let pageSize = 5;
 let pageStart = 1;
