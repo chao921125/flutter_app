@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 2021 04-29
 let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 1606;
+let pageSize = 1444;
 let pageStart = 1;
 let tempPage = 0;
 
