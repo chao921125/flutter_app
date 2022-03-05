@@ -32,8 +32,8 @@ const optionsPage = {
 
 // 2021 04-29
 let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 1072;
-let pageStart = 1;
+let pageSize = 1164;
+let pageStart = 1100;
 let tempPage = 0;
 
 const initBrowser = async () => {
