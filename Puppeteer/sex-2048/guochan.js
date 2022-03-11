@@ -30,9 +30,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2021 04-29
+// 2022 03-11
 let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 221;
+let pageSize = 4;
 let pageStart = 1;
 let tempPage = 0;
 
