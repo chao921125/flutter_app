@@ -30,9 +30,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 01-15
-let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
-let pageSize = 5;
+// 2022 03-12
+let pageUrl = "http://s11.7086xz.net/pw/thread.php?fid=110";
+let pageSize = 13;
 let pageStart = 1;
 let tempPage = 0;
 
