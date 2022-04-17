@@ -17,7 +17,7 @@ function getJsonFiles(jsonPath){
               jsonFiles.push(fPath);
               let fileName = fPath.slice(0, fPath.lastIndexOf("."));
               let upFileName = index > 0 ? jsonFiles[index-1].slice(0, jsonFiles[index-1].lastIndexOf(".")) : "";
-            //   console.log("now file", fileName);
+            //   console.log("now file", fileName);（uun22.com）
             //   console.log("up file", upFileName);
               if ( (upFileName.includes("(1)") && fileName === upFileName.replace("(1)", "").trim()) ||
                     (upFileName.includes("(2)") && fileName === upFileName.replace("(2)", "").trim())  ||

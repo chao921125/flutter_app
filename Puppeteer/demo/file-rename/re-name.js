@@ -12,7 +12,7 @@ function getJsonFiles(jsonPath){
             // let regArr = /\d+\s/ig.exec(item);
             // let regArr = /\d+-/ig.exec(item);
             // let regArr = /\d+\.\d+\.\d*，/ig.exec(item);
-            let regArr = /FHDの/ig.exec(item);
+            let regArr = /【AI高清画质2K修复】/ig.exec(item);
             
             // let regArr = /[\s*]?\(\d\)*/ig.exec(item);
             if (regArr) {
@@ -37,4 +37,4 @@ function getJsonFiles(jsonPath){
 // F:\/MyData\/下载工具\/MV\/标题-偷拍
 // F:\/MyData\/下载工具\/MV\/标题-要看
 // F:\/MyData\/下载工具\/MV\/标题-自拍
-getJsonFiles("F:\/MyData\/Tools\/MV\/Download");
+getJsonFiles("/Volumes/CC/MV");
