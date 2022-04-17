@@ -12,7 +12,6 @@ npm i puppeteer-core
 yarn add puppeteer-core
 
 node demo.js
-
 ```
 
 # Playwright
@@ -35,7 +34,6 @@ npx playwright test --headed
 npx playwright codegen url
 
 node demo.js
-
 ```
 
 # 比较好玩的东西
