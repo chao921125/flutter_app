@@ -1,4 +1,5 @@
-const puppeteer = require("puppeteer");
+const { chromium, firefox, webkit } = require('playwright');
+
 // import * as puppeteer from "puppeteer";
 
 // /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
@@ -7,6 +8,7 @@ const puppeteer = require("puppeteer");
 const optionsLaunch = {
     headless: false,
     devtools: false,
+    downloadsPath: "/Users/huangchao/Downloads",
     defaultViewport: {
         width: 1200,
         height: 900
@@ -43,13 +45,14 @@ const initBrowser = async () => {
     try {
         // for (let i = pageStart; i <= pageSize; i++) {
         for (let i = pageSize; i >= pageStart; i--) {
-            const browser = await puppeteer.launch(optionsLaunch);
-            const page = await browser.newPage();
+            const browser = await chromium.launch(optionsLaunch);
+            const context = await browser.newContext();
+            const page = await context.newPage();
             console.log(i);
             await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
-            await getData(page, browser, i);
-            await page.waitFor(3000);
-            // await browser.close();
+            await getData(page, context, i);
+            await page.waitForTimeout(3000);
+            await browser.close();
         }
     } catch (error) {
         pageSize = tempPage;
@@ -79,11 +82,11 @@ const getData = async (page, browser, index) => {
             console.log(downHref);
             await pageDetail.goto(downHref, optionsPage);
             await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
-            await pageDetail.close();
+            // await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
             continue;
         }
-        await page.waitFor(3000);
+        await page.waitForTimeout(3000);
     }
 }

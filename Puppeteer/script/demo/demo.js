@@ -23,7 +23,7 @@ const puppeteer = require('puppeteer');
         slowMo: 250,
         timeout: 0,
         // devtools: true
-        executablePath: "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
+        // executablePath: "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
     }
     const indexBrowser = await puppeteer.launch(optionsLaunch);
 
