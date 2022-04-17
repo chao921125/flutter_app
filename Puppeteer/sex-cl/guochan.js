@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 2022 03-27 02-16
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 100;
+let pageSize = 95;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -49,7 +49,7 @@ const initBrowser = async () => {
             await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
             await getData(page, browser, i);
             await page.waitFor(3000);
-            await browser.close();
+            // await browser.close();
         }
     } catch (error) {
         pageSize = tempPage;
@@ -78,7 +78,7 @@ const getData = async (page, browser, index) => {
             });
             console.log(downHref);
             await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.click("body button:nth-child(5)");
+            await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
