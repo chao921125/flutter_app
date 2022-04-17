@@ -8,11 +8,13 @@ function getJsonFiles(jsonPath){
         let files = fs.readdirSync(path);
         files.forEach(function (item, index) {
             let sourcePath = join(path, item);
-            // let regArr = /\[(.*?)\]/ig.exec(item);
             // let regArr = /\d+\s/ig.exec(item);
             // let regArr = /\d+-/ig.exec(item);
             // let regArr = /\d+\.\d+\.\d*，/ig.exec(item);
-            let regArr = /【AI高清画质2K修复】/ig.exec(item);
+            // let regArr = /\[(.*?)\]/ig.exec(item);
+            // let regArr = /【[\u4e00-\u9fa5]*】/ig.exec(item);
+            let regArr = /boss0698/ig.exec(item);
+            
             
             // let regArr = /[\s*]?\(\d\)*/ig.exec(item);
             if (regArr) {
@@ -37,4 +39,4 @@ function getJsonFiles(jsonPath){
 // F:\/MyData\/下载工具\/MV\/标题-偷拍
 // F:\/MyData\/下载工具\/MV\/标题-要看
 // F:\/MyData\/下载工具\/MV\/标题-自拍
-getJsonFiles("/Volumes/CC/MV");
+getJsonFiles("/Volumes/HC/SoftTools/BT/MV-02/[BT-btt.com]6");
