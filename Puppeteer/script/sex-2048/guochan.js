@@ -49,7 +49,7 @@ const initBrowser = async () => {
             tempPage = i;
             await page.goto(pageUrl + `?fid-15-page-${i}.html`, optionsPage);
             await getData(page, browser, i);
-            await page.waitFor(3000);
+            await page.waitForTimeout(3000);
             await browser.close();
         }
     } catch (error) {
@@ -84,6 +84,6 @@ const getData = async (page, browser, index) => {
             await pageDetail.close();
             continue;
         }
-        await page.waitFor(3000);
+        await page.waitForTimeout(3000);
     }
 }

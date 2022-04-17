@@ -85,6 +85,6 @@ const getData = async (page, browser, index) => {
             await pageDetail.close();
             continue;
         }
-        await page.waitFor(3000);
+        await page.waitForTimeout(3000);
     }
 }

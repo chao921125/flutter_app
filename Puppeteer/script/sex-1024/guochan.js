@@ -48,7 +48,7 @@ const initBrowser = async () => {
             console.log(i);
             await page.goto(pageUrl + `&page=${i}`, optionsPage);
             await getData(page, browser, i);
-            await page.waitFor(3000);
+            await page.waitForTimeout(3000);
             await browser.close();
         }
     } catch (error) {
@@ -84,6 +84,6 @@ const getData = async (page, browser, index) => {
             await pageDetail.close();
             continue;
         }
-        await page.waitFor(3000);
+        await page.waitForTimeout(3000);
     }
 }

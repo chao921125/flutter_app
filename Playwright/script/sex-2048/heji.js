@@ -46,7 +46,7 @@ const initBrowser = async () => {
         console.log(i);
         await page.goto(pageUrl + `?fid-3-page-${i}.html`, optionsPage);
         await getData(page, browser, i);
-        await page.waitFor(3000);
+        await page.waitForTimeout(3000);
         await browser.close();
     }
 }
@@ -90,5 +90,5 @@ const getData = async (page, browser, index) => {
             continue;
         }
     }
-    await page.waitFor(3000);
+    await page.waitForTimeout(3000);
 }

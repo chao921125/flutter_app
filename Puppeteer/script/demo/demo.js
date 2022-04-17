@@ -59,7 +59,7 @@ async function recursive(indexBrowser, indexPage, sum) {
         // const aPage = await indexBrowser.newPage();
         await i.click();
         break;
-        // aPage.waitFor(5000);
+        // aPage.waitForTimeout(5000);
         // aPage.close();
     }
     await indexPage.goto('https://so.gushiwen.org/guwen/');
