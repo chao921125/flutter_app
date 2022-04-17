@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 2022 03-27 02-16
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 95;
+let pageSize = 94;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -49,7 +49,7 @@ const initBrowser = async () => {
             await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
             await getData(page, browser, i);
             await page.waitFor(3000);
-            // await browser.close();
+            await browser.close();
         }
     } catch (error) {
         pageSize = tempPage;
