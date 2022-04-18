@@ -30,9 +30,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 03-27 02-16
+// 2022 03-27 03-14 1638
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 91;
+let pageSize = 88;
 let pageStart = 1;
 let tempPage = 0;
 

@@ -32,9 +32,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 03-27 02-16
+// 2022 03-27 03-14 1638
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 91;
+let pageSize = 90;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -82,11 +82,17 @@ const getData = async (page, browser, index) => {
             console.log(downHref);
             await pageDetail.goto(downHref, optionsPage);
             const [ download ] = await Promise.all([
-                await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)")
+                pageDetail.waitForEvent("download"),
+                pageDetail.locator("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)").click(),
             ]);
+            const url = download.url();
+            console.log('download url = ', url);
+            const name = download.suggestedFilename();
+            console.log('download name = ', name);
             const path = await download.path();
-            await download.saveAs(path);
-            // await pageDetail.close();
+            console.log('download path = ', path);
+            await download.saveAs(path + name);
+            await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
             continue;
