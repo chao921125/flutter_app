@@ -13,7 +13,7 @@ const optionsLaunch = {
         width: 1200,
         height: 900
     },
-    slowMo: 250,
+    // slowMo: 250,
     timeout: 0,
     // product: "chrome",
     ignoreHTTPSErrors: true,
