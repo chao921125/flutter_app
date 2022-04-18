@@ -34,7 +34,7 @@ const optionsPage = {
 
 // 2022 03-27 03-14 1638
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 90;
+let pageSize = 88;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -46,11 +46,11 @@ const initBrowser = async () => {
         // for (let i = pageStart; i <= pageSize; i++) {
         for (let i = pageSize; i >= pageStart; i--) {
             const browser = await chromium.launch(optionsLaunch);
-            const context = await browser.newContext();
-            const page = await context.newPage();
+            // const context = await browser.newContext();
+            const page = await browser.newPage();
             console.log(i);
             await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
-            await getData(page, context, i);
+            await getData(page, browser, i);
             await page.waitForTimeout(3000);
             await browser.close();
         }
@@ -92,11 +92,12 @@ const getData = async (page, browser, index) => {
             const path = await download.path();
             console.log('download path = ', path);
             await download.saveAs(path + name);
+            await pageDetail.waitForTimeout(2000);
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
             continue;
         }
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(1000);
     }
 }
