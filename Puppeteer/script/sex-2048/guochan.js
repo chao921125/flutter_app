@@ -78,6 +78,8 @@ const getData = async (page, browser, index) => {
                 }
             });
             await pageDetail.goto(downHref, optionsPage);
+            await pageDetail.waitForTimeout(Math.random() * 1000);
+            await pageDetail.waitForSelector("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
             await pageDetail.click("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
             await pageDetail.close();
         } catch(e) {

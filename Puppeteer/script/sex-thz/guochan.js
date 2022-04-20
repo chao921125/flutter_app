@@ -79,6 +79,8 @@ const getData = async (page, browser, index) => {
             // });
             let downHref = await page.$eval(`#postlist div.pct div.t_fsz table tr td.t_f a`, el => el.href);
             await pageDetail.goto(downHref, optionsPage);
+            await pageDetail.waitForTimeout(Math.random() * 1000);
+            await pageDetail.waitForSelector("body > div.uk-container-center.uk-container > div > div > div > div > div > div.uk-text-center.uk-margin-large-top.uk-margin-bottom > div:nth-child(4) > div > a");
             await pageDetail.click("body > div.uk-container-center.uk-container > div > div > div > div > div > div.uk-text-center.uk-margin-large-top.uk-margin-bottom > div:nth-child(4) > div > a");
             await pageDetail.close();
         } catch(e) {
