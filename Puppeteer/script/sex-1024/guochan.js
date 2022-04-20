@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 2022 03-12
 let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
-let pageSize = 27;
+let pageSize = 65;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -48,7 +48,7 @@ const initBrowser = async () => {
             console.log(i);
             await page.goto(pageUrl + `&page=${i}`, optionsPage);
             await getData(page, browser, i);
-            await page.waitForTimeout(3000);
+            await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await browser.close();
         }
     } catch (error) {
@@ -77,15 +77,16 @@ const getData = async (page, browser, index) => {
                 }
             });
             await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.waitForTimeout(Math.random() * 1000);
+            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.waitForSelector("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
             await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
+            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.close();
         } catch(e) {
             console.log("get download url error");
             await pageDetail.close();
             continue;
         }
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
     }
 }

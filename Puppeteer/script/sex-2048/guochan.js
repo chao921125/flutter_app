@@ -31,8 +31,8 @@ const optionsPage = {
 });
 
 // 2022 03-11
-let pageUrl = "https://hjd2048.com/2048/thread.php";
-let pageSize = 37;
+let pageUrl = "https://hjd2048.com/2048/thread.php?";
+let pageSize = 440;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -47,9 +47,9 @@ const initBrowser = async () => {
             const page = await browser.newPage();
             console.log(i);
             tempPage = i;
-            await page.goto(pageUrl + `?fid-15-page-${i}.html`, optionsPage);
+            await page.goto(pageUrl + `fid-15-page-${i}.html`, optionsPage);
             await getData(page, browser, i);
-            await page.waitForTimeout(3000);
+            await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await browser.close();
         }
     } catch (error) {
@@ -78,14 +78,15 @@ const getData = async (page, browser, index) => {
                 }
             });
             await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.waitForTimeout(Math.random() * 1000);
+            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.waitForSelector("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
             await pageDetail.click("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
+            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
             continue;
         }
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
     }
 }
