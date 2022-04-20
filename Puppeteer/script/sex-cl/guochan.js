@@ -50,7 +50,7 @@ const initBrowser = async () => {
             console.log(i);
             await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
             await getData(page, browser, i);
-            await page.waitForTimeout(3000);
+            await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await browser.close();
         }
     } catch (error) {
@@ -80,14 +80,15 @@ const getData = async (page, browser, index) => {
             });
             console.log(downHref);
             await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.waitForTimeout(Math.random() * 1000);
+            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.waitForSelector("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
             await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
+            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
             continue;
         }
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
     }
 }
