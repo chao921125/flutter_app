@@ -17,7 +17,7 @@ const optionsLaunch = {
     ignoreHTTPSErrors: true,
     ignoreDefaultArgs: ["--enable-automation"],
     // channel: "chrome",
-    executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 };
 const optionsPage = {
     timeout: 0,
@@ -33,7 +33,7 @@ const optionsPage = {
 // 2022 03-27 03-14 1638 
 // https://t66y.com/thread0806.php?fid=25
 let pageUrl = "https://cl.912x.xyz/thread0806.php?fid=25";
-let pageSize = 58;
+let pageSize = 67;
 let pageStart = 1;
 let tempPage = 0;
 
