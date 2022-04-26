@@ -8,12 +8,18 @@ function getJsonFiles(jsonPath){
         let files = fs.readdirSync(path);
         files.forEach(function (item, index) {
             let sourcePath = join(path, item);
-            // let regArr = /\d+\s/ig.exec(item);
-            // let regArr = /\d+-/ig.exec(item);
+            // let regArr = /^，/ig.exec(item);
+            let regArr = /\s*【[A-Za-z]*[\u4e00-\u9fa5]*[A-Za-z0-9]*】\s*/ig.exec(item);
             // let regArr = /\d+\.\d+\.\d*，/ig.exec(item);
+            // let regArr = /\d+-\d+-\d*/ig.exec(item);
+            // let regArr = /^\d+\s+/ig.exec(item);
             // let regArr = /\[(.*?)\]/ig.exec(item);
-            // let regArr = /【[\u4e00-\u9fa5]*】/ig.exec(item);
-            let regArr = /boss0698/ig.exec(item);
+            // let regArr = /guochan2048.com-/ig.exec(item);
+            // let regArr = /bbs2048.org出品@/ig.exec(item);
+            // let regArr = /bbs2048.org出品/ig.exec(item);
+            // let regArr = /guochan2048.com -/ig.exec(item);
+            // let regArr = /2048论坛bbs2048.org@/ig.exec(item);
+            // let regArr = /2048论坛jav20s8.com @-/ig.exec(item);
             
             
             // let regArr = /[\s*]?\(\d\)*/ig.exec(item);
@@ -39,4 +45,4 @@ function getJsonFiles(jsonPath){
 // F:\/MyData\/下载工具\/MV\/标题-偷拍
 // F:\/MyData\/下载工具\/MV\/标题-要看
 // F:\/MyData\/下载工具\/MV\/标题-自拍
-getJsonFiles("/Volumes/HC/SoftTools/BT/MV-02/[BT-btt.com]6");
+getJsonFiles("/Volumes/HC/SoftTools/BT/MV-04");
