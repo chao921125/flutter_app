@@ -30,10 +30,10 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 03-27 03-14 1638 
+// 2022 04-01 
 // https://t66y.com/thread0806.php?fid=25
-let pageUrl = "https://cl.912x.xyz/thread0806.php?fid=25";
-let pageSize = 67;
+let pageUrl = "https://t66y.com/thread0806.php?fid=25";
+let pageSize = 71;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -78,12 +78,12 @@ const getData = async (page, browser, index) => {
                     }
                 }
             });
-            console.log(downHref);
             await pageDetail.goto(downHref, optionsPage);
             await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.waitForSelector("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
             await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
             await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
+            console.log("success", downHref);
             await pageDetail.close();
         } catch(e) {
             await pageDetail.close();
