@@ -42,7 +42,20 @@ node demo.js
 
 [适合做页面背景动效的js](http://paperjs.org/)
 
-# T
+# PROXY
+
+https://github.com/anaer/Sub \
+https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml \
+https://cdn.jsdelivr.net/gh/anaer/Sub@main/clash.yaml \
+https://raw.fastgit.org/anaer/Sub/main/clash.yaml
+
+https://github.com/learnhard-cn/free_proxy_ss \
+https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/config.yaml
+
+https://github.com/oslook/clash-freenode \
+https://raw.githubusercontent.com/oslook/clash-freenode/main/clash.yaml \
+https://cdn.jsdelivr.net/gh/oslook/clash-freenode@main/clash.yaml
+
 ## TEMP
 https://github.com/epvincnt/clash
 
@@ -53,6 +66,7 @@ https://github.com/FMYC2015/Clash
 https://github.com/chfchf0306/clash
 
 https://github.com/aiboboxx/clashfree
+
 ## 不稳定
 https://github.com/oslook/clash-freenode
 
@@ -61,7 +75,8 @@ https://github.com/anaer/Sub
 https://github.com/learnhard-cn/free_proxy_ss
 
 https://github.com/vpei/Free-Node-Merge
-## v
+
+## v2
 https://github.com/Pawdroid/Free-servers
 
 https://github.com/Rock-L21/V2ray-Vmess-SSR-Clash
