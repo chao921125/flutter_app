@@ -1,6 +1,7 @@
 # knowledge
 
 # Puppeteer
+对应浏览器位置Mac /Users/huangchao/Works/GitHub/project-source/node_modules/puppeteer/.local-chromium/
 [GitHub](https://github.com/puppeteer/puppeteer) \
 [英文 API](https://pptr.dev/) \
 [中文 API](https://zhaoqize.github.io/puppeteer-api-zh_CN/#/)
@@ -15,6 +16,7 @@ node demo.js
 ```
 
 # Playwright
+对应浏览器位置Mac /Users/huangchao/Library/Caches/ms-playwright/
 [GitHub](https://github.com/microsoft/playwright) \
 [英文 API](https://playwright.dev/docs/intro) \
 ```
