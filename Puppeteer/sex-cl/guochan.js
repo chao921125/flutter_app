@@ -70,6 +70,7 @@ const getData = async (page, browser, index) => {
         const pageDetail = await browser.newPage();
         try {
             let linkHref = await page.$eval(`#tbody > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
+            console.log("page href = ", i, linkHref);
             await pageDetail.goto(linkHref, optionsPage);
             let downHref = await pageDetail.$$eval("#main div.t.t2 table tbody tr.tr1.do_not_catch th:nth-child(2) table tbody tr td div.tpc_content.do_not_catch a", el => {
                 for (let j = 0; j < el.length; j++) {
@@ -86,6 +87,7 @@ const getData = async (page, browser, index) => {
             await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.close();
         } catch(e) {
+            i--;
             await pageDetail.close();
             continue;
         }
