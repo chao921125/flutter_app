@@ -1,5 +1,22 @@
 http://puppeteerjs.com/
 
+
+# Puppeteer
+对应浏览器位置Mac /Users/huangchao/Works/GitHub/project-source/node_modules/puppeteer/.local-chromium/
+[GitHub](https://github.com/puppeteer/puppeteer) \
+[英文 API](https://pptr.dev/) \
+[中文 API](https://zhaoqize.github.io/puppeteer-api-zh_CN/#/)
+```
+npm i puppeteer
+yarn add puppeteer
+
+npm i puppeteer-core
+yarn add puppeteer-core
+
+node demo.js
+```
+
+
 puppeteer.launch([options])
 
 options <Object> 在浏览器上设置的一组可配置选项。 有以下字段：
