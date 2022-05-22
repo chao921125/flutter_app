@@ -9,13 +9,13 @@
   "dependencies": {
     "mysql": "^2.18.1",
     "node-rsa": "^1.1.1",
-    "puppeteer": "^14.1.0",
-    "puppeteer-core": "^14.1.0",
-    "playwright": "^1.22.1"
+    "puppeteer": "^14.1.1",
+    "puppeteer-core": "^14.1.1",
+    "playwright": "^1.22.2"
   },
   "devDependencies": {
     "typescript": "^4.6.4",
-    "@playwright/test": "^1.22.1"
+    "@playwright/test": "^1.22.2"
   },
   "repository": {
     "type": "git",
