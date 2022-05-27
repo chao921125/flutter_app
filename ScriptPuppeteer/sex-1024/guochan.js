@@ -30,7 +30,7 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 04-21
+// 2022 05-22
 let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
 let pageSize = 1;
 let pageStart = 1;
@@ -68,18 +68,20 @@ const getData = async (page, browser, index) => {
         const pageDetail = await browser.newPage();
         try {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
+            console.log("page href = ", i, linkHref);
             await pageDetail.goto(linkHref, optionsPage);
-            let downHref = await pageDetail.$$eval("#read_tpc > a", el => {
+            let downHref = await pageDetail.$$eval("#read_tpc a", el => {
                 for (let j = 0; j < el.length; j++) {
-                    if (el[j].getAttribute("href").includes("torrent")) {
+                    if (el[j].getAttribute("href").includes("torrent") || el[j].getAttribute("href").includes("ww1")) {
                         return el[j].getAttribute("href");
                     }
                 }
             });
+            console.log("download href = ", i, downHref);
             await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.waitForSelector("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
             await pageDetail.click("body > div.tm-section.tm-section-color-1.tm-section-colored > div.uk-container.uk-container-center.uk-text-center.hashinfo > div.uk-width-medium-8-10.uk-width-1-1.uk-container-center.uk-text-center > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(1)");
+            console.log("success", i, downHref);
             await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.close();
         } catch(e) {
@@ -87,6 +89,5 @@ const getData = async (page, browser, index) => {
             await pageDetail.close();
             continue;
         }
-        await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
     }
 }

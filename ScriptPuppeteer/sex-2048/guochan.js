@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 2022 04-24
 let pageUrl = "https://hjd2048.com/2048/thread.php?";
-let pageSize = 14;
+let pageSize = 223;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -69,23 +69,26 @@ const getData = async (page, browser, index) => {
         const pageDetail = await browser.newPage();
         try {
             let linkHref = await page.$eval(`#ajaxtable > tbody:nth-child(2) > tr:nth-child(${i}) > td:nth-child(2) > a`, el => el.href);
+            console.log("page href = ", i, linkHref);
             await pageDetail.goto(linkHref, optionsPage);
-            let downHref = await pageDetail.$$eval("#read_tpc > a", el => {
+            let downHref = await pageDetail.$$eval("#read_tpc a", el => {
                 for (let j = 0; j < el.length; j++) {
                     if (el[j].getAttribute("href").includes("list.php")) {
                         return el[j].getAttribute("href");
                     }
                 }
             });
+            console.log("download href = ", i, downHref);
             await pageDetail.goto(downHref, optionsPage);
             await pageDetail.waitForSelector("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
             await pageDetail.click("body > div > div.uk-container.uk-container-center.uk-text-center.hashinfo > div > div > div > div.uk-width-1-1.uk-text-center.dlboxbg > a:nth-child(2)");
+            console.log("success", i, downHref);
             await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await pageDetail.close();
         } catch(e) {
+            console.log("get download url error");
             await pageDetail.close();
             continue;
         }
-        await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
     }
 }
