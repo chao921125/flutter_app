@@ -40,20 +40,21 @@ const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    try {
-        // for (let i = pageStart; i <= pageSize; i++) {
-        for (let i = pageSize; i >= pageStart; i--) {
-            const browser = await puppeteer.launch(optionsLaunch);
+    // for (let i = pageStart; i <= pageSize; i++) {
+    for (let i = pageSize; i >= pageStart; i--) {
+        const browser = await puppeteer.launch(optionsLaunch);
+        try {
             const page = await browser.newPage();
             console.log(i);
             await page.goto(pageUrl + `&page=${i}`, optionsPage);
             await getData(page, browser, i);
             await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await browser.close();
+        } catch (error) {
+            pageSize = tempPage;
+            await browser.close();
+            await initBrowser();
         }
-    } catch (error) {
-        pageSize = tempPage;
-        await initBrowser();
     }
 }
 

@@ -32,7 +32,7 @@ const optionsPage = {
 
 // 2022 04-24
 let pageUrl = "https://hjd2048.com/2048/thread.php?";
-let pageSize = 223;
+let pageSize = 151;
 let pageStart = 1;
 let tempPage = 0;
 
@@ -40,10 +40,10 @@ const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    try {
-        // for (let i = pageStart; i <= pageSize; i++) {
-        for (let i = pageSize; i >= pageStart; i--) {
-            const browser = await puppeteer.launch(optionsLaunch);
+    // for (let i = pageStart; i <= pageSize; i++) {
+    for (let i = pageSize; i >= pageStart; i--) {
+        const browser = await puppeteer.launch(optionsLaunch);
+        try {
             const page = await browser.newPage();
             console.log(i);
             tempPage = i;
@@ -51,10 +51,11 @@ const initBrowser = async () => {
             await getData(page, browser, i);
             await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await browser.close();
+        } catch (error) {
+            pageSize = tempPage;
+            await browser.close();
+            await initBrowser();
         }
-    } catch (error) {
-        pageSize = tempPage;
-        await initBrowser();
     }
 }
 

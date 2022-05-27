@@ -41,10 +41,11 @@ const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
     // });
-    try {
         // for (let i = pageStart; i <= pageSize; i++) {
-        for (let i = pageSize; i >= pageStart; i--) {
-            const browser = await puppeteer.launch(optionsLaunch);
+    for (let i = pageSize; i >= pageStart; i--) {
+        const browser = await puppeteer.launch(optionsLaunch);
+
+        try {
             const page = await browser.newPage();
             await page.evaluateOnNewDocument("() => { Object.defineProperties(navigator,{ webdriver: { get: () => false } }) }");
             console.log(i);
@@ -52,10 +53,11 @@ const initBrowser = async () => {
             await getData(page, browser, i);
             await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
             await browser.close();
+        } catch (error) {
+            pageSize = tempPage;
+            await browser.close();
+            await initBrowser();
         }
-    } catch (error) {
-        pageSize = tempPage;
-        await initBrowser();
     }
 }
 
