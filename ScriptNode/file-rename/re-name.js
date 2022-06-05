@@ -19,20 +19,36 @@ function getJsonFiles(jsonPath){
             // let regArr = /guochan2048.com -/ig.exec(item);
             // let regArr = /2048论坛bbs2048.org@/ig.exec(item);
             // let regArr = /2048论坛jav20s8.com @-/ig.exec(item);
-            let regArr = /^，/ig.exec(item);
-            
-            
-            // let regArr = /[\s*]?\(\d\)*/ig.exec(item);
-            if (regArr) {
-                let reName = item.replace(regArr[0], "");
-                let destPath = join(path, reName);
-                fs.rename(sourcePath, destPath, (error) => {
-                    if (error) {
-                      console.log(index, error);
-                    } else {
-                      console.log(index + ' = ' + reName);
-                    }
-                });
+            // let regArr = /^，/ig.exec(item);
+            const regArray = [
+                /\s*【[A-Za-z]*\s*[\u4e00-\u9fa5]*\s*[A-Za-z0-9]*\s*[\u4e00-\u9fa5]*\s*[A-Za-z0-9]*】\s*/ig.exec(item),
+                /\d+\.\d+\.\d*，/ig.exec(item),
+                /\d+-\d+-\d*/ig.exec(item),
+                /^\d+\s+/ig.exec(item),
+                /\[(.*?)\]/ig.exec(item),
+                /guochan2048.com-/ig.exec(item),
+                /bbs2048.org出品@/ig.exec(item),
+                /bbs2048.org出品/ig.exec(item),
+                /guochan2048.com -/ig.exec(item),
+                /2048论坛bbs2048.org@/ig.exec(item),
+                /2048论坛jav20s8.com @-/ig.exec(item),
+                /^，$/ig.exec(item),
+                /[\s*]?\(\d\)*/ig.exec(item)
+            ];
+            let reg = null;
+            for (let o of regArray) {
+                reg = o;
+                if (reg) {
+                    let reName = item.replace(reg[0], "");
+                    let destPath = join(path, reName);
+                    fs.rename(sourcePath, destPath, (error) => {
+                        if (error) {
+                          console.log(index, error);
+                        } else {
+                          console.log(index + ' = ' + reName);
+                        }
+                    });
+                }
             }
         });
     }
@@ -45,4 +61,4 @@ function getJsonFiles(jsonPath){
 // F:\/MyData\/下载工具\/MV\/标题-偷拍
 // F:\/MyData\/下载工具\/MV\/标题-要看
 // F:\/MyData\/下载工具\/MV\/标题-自拍
-getJsonFiles("/Volumes/System/Puppeteer");
+getJsonFiles("E:\/Download");
