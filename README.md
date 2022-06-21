@@ -5,7 +5,7 @@
 
 [适合做页面背景动效的js](http://paperjs.org/)
 
-# PROXY
+# Proxy Clash
 https://github.com/xOS/Config \
 https://raw.githubusercontent.com/xOS/Config/Her/Clash/Config.yml
 
@@ -87,9 +87,28 @@ https://suo.yt/i0zeobp
 
 https://github.com/vpei/Free-Node-Merge
 
-## v2
+## Proxy v2
 https://github.com/Pawdroid/Free-servers
 
 https://github.com/Rock-L21/V2ray-Vmess-SSR-Clash
 
 https://github.com/WallKiller-glitch/V2raySSSSRShare
+
+## Proxy 综合
+
+https://github.com/AzadNetCH/Clash \
+https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet.yml \
+URL2: https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet_IRAN-Direct1.yml \
+URL3: https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet_IRAN-Direct2.yml \
+URL4: https://raw.githubusercontent.com/AzadNetCH/Clash/main/V2Ray.txt
+
+
+https://github.com/colatiger/v2ray-nodes \
+https://fastly.jsdelivr.net/gh/colatiger/v2ray-nodes/clash.yaml
+
+
+https://github.com/pojiezhiyuanjun/freev2
+
+https://github.com/freefq/free \
+https://raw.fastgit.org/freefq/free/master/v2
+
