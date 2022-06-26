@@ -18,6 +18,7 @@ const optionsLaunch = {
     ignoreDefaultArgs: ["--enable-automation"],
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
 };
 const optionsPage = {
     timeout: 60000,
@@ -32,7 +33,7 @@ const optionsPage = {
 
 // 2022 06-04
 let pageUrl = "https://hjd2048.com/2048/thread.php?";
-let pageSize = 183;
+let pageSize = 175;
 let pageStart = 1;
 let tempPage = 0;
 
