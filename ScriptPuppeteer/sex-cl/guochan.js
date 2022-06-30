@@ -34,7 +34,7 @@ const optionsPage = {
 // 2022 05-20
 // https://t66y.com/thread0806.php?fid=25
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 96;
+let pageSize = 99;
 let pageStart = 1;
 let tempPage = 0;
 
