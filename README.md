@@ -52,18 +52,6 @@ https://tt.vg/freev2
 Clash
 https://tt.vg/freeclash
 
-https://github.com/vpei/Free-Node-Merge
-v2ray
-https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/out/node.txt
-https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/out/nodecn.txt
-Clash
-https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/out/clashnode.txt
-https://dweb.link/ipns/k51qzi5uqu5dlfnig6lej7l7aes2d5oed6a4435s08ccftne1hq09ac1bulz2f/clash.yaml
-https://dweb.link/ipns/k51qzi5uqu5dlfnig6lej7l7aes2d5oed6a4435s08ccftne1hq09ac1bulz2f/openclash.yaml
-https://dweb.link/ipns/k51qzi5uqu5dlfnig6lej7l7aes2d5oed6a4435s08ccftne1hq09ac1bulz2f/clashnode.yaml
-https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/out/clash.yaml
-https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/out/openclash.yaml
-
 https://github.com/alanbobs999/TopFreeProxies
 v2ray
 https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity
