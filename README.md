@@ -79,18 +79,12 @@ Clash
 https://raw.githubusercontent.com/mohsenhafezquran/ClashVPN/main/ClashVPN
 https://raw.githubusercontent.com/mohsenhafezquran/ClashVPN/main/Clash
 
-https://github.com/jw853355718/clash_233
-Clash
-https://raw.githubusercontent.com/jw853355718/clash_233/master/speed_short.yaml
-https://raw.githubusercontent.com/jw853355718/clash_233/master/speed.yaml
-
 https://github.com/zjr13808836946/zjr_clash
 Clash
 https://raw.githubusercontent.com/zjr13808836946/zjr_clash/main/v2ray_t_clash
 https://raw.githubusercontent.com/zjr13808836946/zjr_clash/main/v2_ssr_class
 
 # Proxy v2
-
 https://github.com/Jsnzkpg/Jsnzkpg
 v2ray
 https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg
