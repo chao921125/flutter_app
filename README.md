@@ -40,10 +40,8 @@ https://raw.githubusercontent.com/kxswa/k/k/yaml
 
 https://github.com/ermaozi/get_subscribe
 v2ray
-https://git.io/emzv2ray
 https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt
 Clash
-https://git.io/emzclash
 https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml
 
 https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash
@@ -60,28 +58,9 @@ Clash
 https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity.yml
 https://fastly.jsdelivr.net/gh/alanbobs999/TopFreeProxies@master/Eternity.yml
 
-https://github.com/learnhard-cn/free_proxy_ss
-v2ray
-https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/v2ray/v2raysub
-Clash
-https://cdn.jsdelivr.net/gh/learnhard-cn/free_proxy_ss@main/clash/clash.provider.yaml
-https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/clash.provider.yaml
-https://cdn.jsdelivr.net/gh/learnhard-cn/free_proxy_ss@main/clash/config.yaml
-https://raw.githubusercontent.com/learnhard-cn/free_proxy_ss/main/clash/config.yaml
-
 # Proxy Clash
-
-https://github.com/gooooooooooooogle/Clash-Config
-Clash
-https://raw.githubusercontent.com/gooooooooooooogle/Clash-Config/main/Clash.yaml
-
-https://github.com/epvincnt/clash
-Clash
-https://raw.githubusercontent.com/epvincnt/clash/main/README.md
-
 https://github.com/aiboboxx/clashfree
 Clash
-https://suo.yt/i0zeobp
 https://raw.githubusercontent.com/aiboboxx/clashfree/main/clash.yml
 
 https://github.com/sh3d0ww02f/sh3d0ww02f.github.io
