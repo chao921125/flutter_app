@@ -18,7 +18,7 @@ const optionsLaunch = {
     ignoreDefaultArgs: ["--enable-automation"],
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
+    // executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
 };
 const optionsPage = {
     timeout: 0,
@@ -34,7 +34,7 @@ const optionsPage = {
 // 2022 05-20
 // https://t66y.com/thread0806.php?fid=25
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 99;
+let pageSize = 98;
 let pageStart = 1;
 let tempPage = 0;
 
