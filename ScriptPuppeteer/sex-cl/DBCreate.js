@@ -1,8 +1,4 @@
 const puppeteer = require("puppeteer");
-// import * as puppeteer from "puppeteer";
-
-// /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-// /Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge
 
 const optionsLaunch = {
     headless: false,
@@ -17,13 +13,30 @@ const optionsLaunch = {
     ignoreHTTPSErrors: true,
     ignoreDefaultArgs: ["--enable-automation"],
     // channel: "chrome",
-    // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    // executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
+    executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
 };
+
 const optionsPage = {
     timeout: 0,
     waitUntil: "domcontentloaded"
 };
+
+let mysql = require("mysql");
+let connection = mysql.createConnection({
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: "huangchao",
+    database: 'demo'
+});
+connection.connect((err) => {
+    if (err) {
+        console.log("mysql connection ERROR" +  err.stack);
+        return false;
+    } else {
+        console.log("mysql connection SUCCESS");
+    }
+});
 
 ;(async () => {
     await initBrowser();
@@ -31,13 +44,13 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 05-20
-// https://t66y.com/thread0806.php?fid=25
+// 2022 07-03
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 100;
+let pageSize = 4;
 let pageStart = 1;
 let tempPage = 0;
 
+// 翻页
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {
     //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
@@ -83,11 +96,22 @@ const getData = async (page, browser, index) => {
                 }
             });
             console.log("download href = ", i, downHref);
-            await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.waitForSelector("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
-            await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
-            console.log("success", i, downHref);
-            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
+            if (downHref) {
+                let addSql = 'INSERT INTO `demo`.`sex-cl`(`pageURL`, `downloadURL`) VALUES ?';
+                let addSqlParams = [[linkHref, downHref]];
+                connection.query(addSql, [addSqlParams], function (err, result) {
+                    if(err){
+                    console.log('[INSERT ERROR] - ',err.message);
+                    return;
+                    }        
+                    console.log('--------------------------INSERT----------------------------');
+                    console.log('INSERT ID:',result);        
+                    console.log('-----------------------------------------------------------------\n\n');  
+                });
+            }
+            if (downHref === undefined) {
+                i++;
+            }
             await pageDetail.close();
         } catch(e) {
             i--;

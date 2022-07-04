@@ -1,8 +1,4 @@
 const puppeteer = require("puppeteer");
-// import * as puppeteer from "puppeteer";
-
-// /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-// /Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge
 
 const optionsLaunch = {
     headless: false,
@@ -17,13 +13,22 @@ const optionsLaunch = {
     ignoreHTTPSErrors: true,
     ignoreDefaultArgs: ["--enable-automation"],
     // channel: "chrome",
-    // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    // executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
 };
+
 const optionsPage = {
     timeout: 0,
     waitUntil: "domcontentloaded"
 };
+
+let mysql = require("mysql");
+let connection = mysql.createConnection({
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: "root",
+    database: 'demo'
+});
+connection.connect();
 
 ;(async () => {
     await initBrowser();
@@ -32,11 +37,11 @@ const optionsPage = {
 });
 
 // 2022 05-20
-// https://t66y.com/thread0806.php?fid=25
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
 let pageSize = 100;
 let pageStart = 1;
 let tempPage = 0;
+
 
 const initBrowser = async () => {
     // await page.evaluateOnNewDocument(() => {

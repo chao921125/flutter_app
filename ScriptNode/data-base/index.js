@@ -11,7 +11,9 @@ connection.connect();
 // more data let params = [[],[]...]; query(sql, [params], fn)
 // let addSql = 'INSERT INTO `test_node`.`1024`(`url`) VALUES ?';
 // let addSqlParams = ['https://c.runoob.com'];
-let addSql = 'INSERT INTO `test_node`.`1024`(`url`) VALUES ?';
+
+// sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+let addSql = 'INSERT INTO `demo`.`sex-cl`(`url`) VALUES ?';
 let addSqlParams = [['https://c.runoob.com'], ['https://c2222.com']];
 connection.query(addSql, [addSqlParams], function (err, result) {
     if(err){
