@@ -14,11 +14,12 @@ https://github.com/ZGQ-inc/overthefirewall
 https://github.com/jnlaoshu/MySelf
 
 # Proxy 综合
+<!-- 网站暂时无法访问 -->
 https://github.com/GreenFishStudio/GreenFish
 v2ray
-https://dllx.tk/GreenFishYYDS
+~~~https://dllx.tk/GreenFishYYDS~~~
 Clash
-https://dllx.tk/GreenFishYYDS-Clash
+~~~https://dllx.tk/GreenFishYYDS-Clash~~~
 
 https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash
 v2ray
