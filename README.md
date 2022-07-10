@@ -21,11 +21,12 @@ v2ray
 Clash
 ~~~https://dllx.tk/GreenFishYYDS-Clash~~~
 
+<!-- 网站暂时无法访问 -->
 https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash
 v2ray
-https://tt.vg/freev2
+~~~https://tt.vg/freev2~~~
 Clash
-https://tt.vg/freeclash
+~~~https://tt.vg/freeclash~~~
 
 https://github.com/yu-steven/openit
 https://doc.openit.ml/
