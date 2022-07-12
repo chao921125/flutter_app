@@ -13,6 +13,8 @@ https://github.com/Junely/clash
 https://github.com/ZGQ-inc/overthefirewall
 https://github.com/jnlaoshu/MySelf
 
+https://github.com/sakopower/KH_CLASH
+
 # Proxy 综合
 <!-- 网站暂时无法访问 -->
 https://github.com/GreenFishStudio/GreenFish
