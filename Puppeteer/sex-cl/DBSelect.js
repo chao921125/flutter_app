@@ -25,10 +25,17 @@ let connection = mysql.createConnection({
     host: "localhost",
     port: "3306",
     user: "root",
-    password: "root",
+    password: "huangchao",
     database: 'demo'
 });
-connection.connect();
+connection.connect((err) => {
+    if (err) {
+        console.log("mysql connection ERROR" +  err.stack);
+        return false;
+    } else {
+        console.log("mysql connection SUCCESS");
+    }
+});
 
 ;(async () => {
     await initBrowser();
@@ -44,27 +51,37 @@ let tempPage = 0;
 
 
 const initBrowser = async () => {
-    // await page.evaluateOnNewDocument(() => {
-    //     Object.defineProperty(navigator, 'webdriver', { get: () => false });
-    // });
-        // for (let i = pageStart; i <= pageSize; i++) {
-    for (let i = pageSize; i >= pageStart; i--) {
-        const browser = await puppeteer.launch(optionsLaunch);
+    let getSql = 'SELECT id, downloadURL FROM `demo`.`sex-cl` LIMIT 5';
+    let getSqlParams = [];
+    const arr = connection.query(getSql, [getSqlParams], function (err, result) {
+        if(err){
+        console.log('[INSERT ERROR] - ',err.message);
+        return;
+        }        
+        console.log('--------------------------INSERT----------------------------');
+        console.log('INSERT ID:',result);        
+        console.log('-----------------------------------------------------------------\n\n'); 
+        callback(result);
+    });
+    console.log(arr)
 
-        try {
-            const page = await browser.newPage();
-            await page.evaluateOnNewDocument("() => { Object.defineProperties(navigator,{ webdriver: { get: () => false } }) }");
-            console.log(i);
-            await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
-            await getData(page, browser, i);
-            await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
-            await browser.close();
-        } catch (error) {
-            pageSize = tempPage;
-            await browser.close();
-            await initBrowser();
-        }
-    }
+    // for (let i = pageSize; i >= pageStart; i--) {
+    //     const browser = await puppeteer.launch(optionsLaunch);
+
+    //     try {
+    //         const page = await browser.newPage();
+    //         await page.evaluateOnNewDocument("() => { Object.defineProperties(navigator,{ webdriver: { get: () => false } }) }");
+    //         console.log(i);
+    //         await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
+    //         await getData(page, browser, i);
+    //         await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
+    //         await browser.close();
+    //     } catch (error) {
+    //         pageSize = tempPage;
+    //         await browser.close();
+    //         await initBrowser();
+    //     }
+    // }
 }
 
 const getData = async (page, browser, index) => {
@@ -100,4 +117,18 @@ const getData = async (page, browser, index) => {
             continue;
         }
     }
+}
+
+const delDataId = (id) => {
+    let delSql = 'DELETE FROM `demo`.`sex-cl` WHERE id = ?';
+    let delSqlParams = [id];
+    const arr = connection.query(delSql, [delSqlParams], function (err, result) {
+        if(err){
+        console.log('[DELETE ERROR] - ',err.message);
+        return;
+        }        
+        console.log('--------------------------DELETE----------------------------');
+        console.log('DELETE ID:',result);        
+        console.log('-----------------------------------------------------------------\n\n'); 
+    });
 }
