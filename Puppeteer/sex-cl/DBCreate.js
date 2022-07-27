@@ -44,9 +44,9 @@ connection.connect((err) => {
     await initBrowser();
 });
 
-// 2022 07-08
+// 2022 07-17
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 5;
+let pageSize = 28;
 let pageStart = 1;
 let tempPage = 0;
 
