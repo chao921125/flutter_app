@@ -46,7 +46,7 @@ connection.connect((err) => {
 
 // 2022 07-17
 let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 28;
+let pageSize = 18;
 let pageStart = 1;
 let tempPage = 0;
 

@@ -88,11 +88,6 @@ Clash
 https://raw.githubusercontent.com/mohsenhafezquran/ClashVPN/main/ClashVPN
 https://raw.githubusercontent.com/mohsenhafezquran/ClashVPN/main/Clash
 
-https://github.com/zjr13808836946/zjr_clash
-Clash
-https://raw.githubusercontent.com/zjr13808836946/zjr_clash/main/v2ray_t_clash
-https://raw.githubusercontent.com/zjr13808836946/zjr_clash/main/v2_ssr_class
-
 https://github.com/ermaozi/get_subscribe
 Clash
 https://git.io/emzclash
