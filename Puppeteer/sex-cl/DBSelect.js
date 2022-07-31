@@ -44,78 +44,45 @@ connection.connect((err) => {
 });
 
 // 2022 05-20
-let pageUrl = "https://t66y.com/thread0806.php?fid=25";
-let pageSize = 100;
+let pageSize = 1;
 let pageStart = 1;
 let tempPage = 0;
 
 
 const initBrowser = async () => {
-    let getSql = 'SELECT id, downloadURL FROM `demo`.`sex-cl` LIMIT 5';
-    let getSqlParams = [];
-    const arr = connection.query(getSql, [getSqlParams], function (err, result) {
-        if(err){
-        console.log('[INSERT ERROR] - ',err.message);
-        return;
-        }        
-        console.log('--------------------------INSERT----------------------------');
-        console.log('INSERT ID:',result);        
-        console.log('-----------------------------------------------------------------\n\n'); 
-        callback(result);
-    });
-    console.log(arr)
-
-    // for (let i = pageSize; i >= pageStart; i--) {
-    //     const browser = await puppeteer.launch(optionsLaunch);
-
-    //     try {
-    //         const page = await browser.newPage();
-    //         await page.evaluateOnNewDocument("() => { Object.defineProperties(navigator,{ webdriver: { get: () => false } }) }");
-    //         console.log(i);
-    //         await page.goto(pageUrl + `&search=&page=${i}`, optionsPage);
-    //         await getData(page, browser, i);
-    //         await page.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
-    //         await browser.close();
-    //     } catch (error) {
-    //         pageSize = tempPage;
-    //         await browser.close();
-    //         await initBrowser();
-    //     }
-    // }
+    const browser = await puppeteer.launch(optionsLaunch);
+    while(pageSize > 0) {
+        let getSql = 'SELECT id, downloadURL FROM `demo`.`sex-cl` LIMIT 1';
+        let getSqlParams = [];
+        connection.query(getSql, [getSqlParams], function (err, result) {
+            if(err){
+                console.log('[SELECT ERROR] - ',err.message);
+                return;
+            }        
+            console.log('--------------------------SELECT----------------------------');
+            console.log('SELECT ID:',result);
+            if (result && result.length > 0) {
+                getData(browser, result[0].id, result[0].downloadURL);
+            }
+            console.log('-----------------------------------------------------------------\n\n'); 
+        });
+        
+        pageSize--;
+    }
 }
 
-const getData = async (page, browser, index) => {
-    await page.waitForSelector("#tbody");
-    let listLength = await page.$$eval("#tbody > tr", el => el.length);
-    let start = 1;
-    if (index === 1) {
-        start = 11;
-    }
-    for (let i = start; i <= listLength; i++) {
-        const pageDetail = await browser.newPage();
-        try {
-            let linkHref = await page.$eval(`#tbody > tr:nth-child(${i}) > td:nth-child(2) > h3 > a`, el => el.href);
-            console.log("page href = ", i, linkHref);
-            await pageDetail.goto(linkHref, optionsPage);
-            let downHref = await pageDetail.$$eval("#main div.t.t2 table tbody tr.tr1.do_not_catch th:nth-child(2) table tbody tr td div.tpc_content.do_not_catch a", el => {
-                for (let j = 0; j < el.length; j++) {
-                    if (el[j].getAttribute("href").includes("link.php")) {
-                        return el[j].getAttribute("href");
-                    }
-                }
-            });
-            console.log("download href = ", i, downHref);
-            await pageDetail.goto(downHref, optionsPage);
-            await pageDetail.waitForSelector("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
-            await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
-            console.log("success", i, downHref);
-            await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
-            await pageDetail.close();
-        } catch(e) {
-            i--;
-            await pageDetail.close();
-            continue;
-        }
+const getData = async (browser, id, downHref) => {
+    const pageDetail = await browser.newPage();
+    try {
+        await pageDetail.goto(downHref, optionsPage);
+        await pageDetail.waitForSelector("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
+        await pageDetail.click("body > form > table > tbody > tr:nth-child(2) > td > li > ul > button:nth-child(6)");
+        console.log("success", downHref);
+        delDataId(id);
+        await pageDetail.waitForTimeout(Math.ceil(Math.random() * 2 + 1) * 1000);
+        await pageDetail.close();
+    } catch(e) {
+        await pageDetail.close();
     }
 }
 
@@ -124,8 +91,8 @@ const delDataId = (id) => {
     let delSqlParams = [id];
     const arr = connection.query(delSql, [delSqlParams], function (err, result) {
         if(err){
-        console.log('[DELETE ERROR] - ',err.message);
-        return;
+            console.log('[DELETE ERROR] - ',err.message);
+            return;
         }        
         console.log('--------------------------DELETE----------------------------');
         console.log('DELETE ID:',result);        

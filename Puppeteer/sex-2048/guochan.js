@@ -32,7 +32,7 @@ const optionsPage = {
 });
 
 // 2022 06-28
-let pageUrl = "https://hjd2048.com/2048/thread.php?";
+let pageUrl = "https://wb.zhongpingshe.com/2048/thread.php?";
 let pageSize = 42;
 let pageStart = 1;
 let tempPage = 0;

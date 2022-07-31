@@ -32,7 +32,7 @@ const optionsPage = {
 });
 
 // 2022 06-25
-let pageUrl = "https://m11.1024xp2.club/pw/thread.php?fid=110";
+let pageUrl = "https://y11.stv919.rocks/pw/thread.php?fid=110";
 let pageSize = 3;
 let pageStart = 1;
 let tempPage = 0;
