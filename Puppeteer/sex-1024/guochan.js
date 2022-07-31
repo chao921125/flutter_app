@@ -15,10 +15,10 @@ const optionsLaunch = {
     timeout: 0,
     // product: "chrome",
     ignoreHTTPSErrors: true,
-    ignoreDefaultArgs: ["--enable-automation"],
+    ignoreDefaultArgs: ["--enable-automation", "--enable-blink-features"],
     // channel: "chrome",
-    // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    // executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
+    // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" 
+    executablePath: "C:\/Program Files\/Google\/Chrome\/Application\/chrome.exe"
 };
 const optionsPage = {
     timeout: 0,
@@ -33,7 +33,7 @@ const optionsPage = {
 
 // 2022 06-25
 let pageUrl = "https://y11.stv919.rocks/pw/thread.php?fid=110";
-let pageSize = 3;
+let pageSize = 114;
 let pageStart = 1;
 let tempPage = 0;
 

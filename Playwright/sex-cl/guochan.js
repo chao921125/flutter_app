@@ -17,7 +17,7 @@ const optionsLaunch = {
     timeout: 0,
     // product: "chrome",
     ignoreHTTPSErrors: true,
-    ignoreDefaultArgs: ["--enable-automation"],
+    ignoreDefaultArgs: ["--enable-automation", "--enable-blink-features"],
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 };

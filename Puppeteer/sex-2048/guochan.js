@@ -15,7 +15,7 @@ const optionsLaunch = {
     timeout: 60000,
     // product: "chrome",
     ignoreHTTPSErrors: true,
-    ignoreDefaultArgs: ["--enable-automation"],
+    ignoreDefaultArgs: ["--enable-automation", "--enable-blink-features"],
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
