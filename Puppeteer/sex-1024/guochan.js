@@ -15,7 +15,7 @@ const optionsLaunch = {
     timeout: 0,
     // product: "chrome",
     ignoreHTTPSErrors: true,
-    ignoreDefaultArgs: ["--enable-automation", "--enable-blink-features"],
+    ignoreDefaultArgs: ["--enable-automation", "--enable-blink-features=IdleDetection"],
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" 
     executablePath: "C:\/Program Files\/Google\/Chrome\/Application\/chrome.exe"
@@ -31,9 +31,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 06-25
+// 2022 07-09
 let pageUrl = "https://y11.stv919.rocks/pw/thread.php?fid=110";
-let pageSize = 114;
+let pageSize = 98;
 let pageStart = 1;
 let tempPage = 0;
 
