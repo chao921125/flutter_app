@@ -18,7 +18,8 @@ const optionsLaunch = {
     ignoreDefaultArgs: ["--enable-automation", "--enable-blink-features"],
     // channel: "chrome",
     // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
+    // executablePath: "C:\/Program Files (x86)\/Microsoft\/Edge\/Application\/msedge.exe"
+    executablePath: "C:\/Program Files\/Google\/Chrome\/Application\/chrome.exe"
 };
 const optionsPage = {
     timeout: 60000,
@@ -31,9 +32,9 @@ const optionsPage = {
     await initBrowser();
 });
 
-// 2022 06-28
-let pageUrl = "https://wb.zhongpingshe.com/2048/thread.php?";
-let pageSize = 42;
+// 2022 07-18
+let pageUrl = "https://bbs.tourismbbs.com/2048/thread.php?";
+let pageSize = 361;
 let pageStart = 1;
 let tempPage = 0;
 

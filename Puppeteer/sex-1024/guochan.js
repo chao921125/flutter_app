@@ -32,8 +32,8 @@ const optionsPage = {
 });
 
 // 2022 07-09
-let pageUrl = "https://y11.stv919.rocks/pw/thread.php?fid=110";
-let pageSize = 98;
+let pageUrl = "https://yj2207.link/pw/thread.php?fid=110";
+let pageSize = 62;
 let pageStart = 1;
 let tempPage = 0;
 
