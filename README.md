@@ -1,3 +1,5 @@
+# google inurl:clash/proxies
+
 # 导航
 
 https://github.com/Helpsoftware/fanqiang
