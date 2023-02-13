@@ -24,35 +24,16 @@ https://github.com/sakopower/KH_CLASH
 Clash: https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/clash.config.yaml \
 V2Ray: https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/v2ray.config.txt
 
+https://github.com/kxswa/k \
+v2ray: https://kxswa.tk/v2ray \
+Clash: https://kxswa.tk/clash \
+
+https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash \
+v2ray:https://tt.vg/freev2 【备用】 https://freefq.neocities.org/free.txt \
+Clash:https://tt.vg/freeclash 【备用】 https://freefq.neocities.org/free.xml
+
 Clash: https://raw.githubusercontent.com/vveg26/get_proxy/main/dist/clash.config.yaml \
 V2Ray: https://raw.githubusercontent.com/vveg26/get_proxy/main/dist/v2ray.config.txt
-
-###### 网站暂时无法访问
-https://github.com/GreenFishStudio/GreenFish \
-v2ray: https://dllx.tk/GreenFishYYDS \
-Clash: https://dllx.tk/GreenFishYYDS-Clash
-
-###### 网站暂时无法访问
-https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash \
-v2ray:https://tt.vg/freev2 \
-Clash:https://tt.vg/freeclash
-
-https://github.com/yu-steven/openit \
-https://doc.openit.ml/ \
-v2ray: https://openit.ml/long \
-Clash: https://openit.ml/Clash.yaml
-
-https://github.com/kxswa/k \
-v2ray: https://ghproxy.com/https://raw.githubusercontent.com/kxswa/k/k/long \
-https://raw.githubusercontent.com/kxswa/k/k/long \
-Clash: https://ghproxy.com/https://raw.githubusercontent.com/kxswa/k/k/yaml \
-https://raw.githubusercontent.com/kxswa/k/k/yaml
-
-https://github.com/alanbobs999/TopFreeProxies \
-v2ray: https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity \
-https://fastly.jsdelivr.net/gh/alanbobs999/TopFreeProxies@master/Eternity \
-Clash: https://raw.githubusercontent.com/alanbobs999/TopFreeProxies/master/Eternity.yml \
-https://fastly.jsdelivr.net/gh/alanbobs999/TopFreeProxies@master/Eternity.yml
 
 # Proxy Clash
 https://sub.id9.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fraw.githubusercontent.com%2FJsnzkpg%2FJsnzkpg%2FJsnzkpg%2FJsnzkpg&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini
@@ -60,8 +41,6 @@ https://sub.id9.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fraw.githubus
 https://sub.xeton.dev/sub?target=clash&new_name=true&url=https%3A%2F%2Ffreefq.neocities.org%2Ffree.txt&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Mini.ini
 
 https://kxswa.tk/clash
-
-
 
 https://github.com/anaer/Sub \
 Clash: https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml \
@@ -73,18 +52,6 @@ https://raw.iqiq.io/anaer/Sub/main/clash.yaml
 
 https://github.com/aiboboxx/clashfree \
 Clash: https://raw.githubusercontent.com/aiboboxx/clashfree/main/clash.yml
-
-https://github.com/sh3d0ww02f/sh3d0ww02f.github.io \
-Clash: https://raw.githubusercontent.com/sh3d0ww02f/sh3d0ww02f.github.io/main/shadowrocket.yaml \
-https://raw.githubusercontent.com/sh3d0ww02f/sh3d0ww02f.github.io/main/clash1.yaml
-
-https://github.com/mohsenhafezquran/ClashVPN \
-Clash: https://raw.githubusercontent.com/mohsenhafezquran/ClashVPN/main/ClashVPN \
-https://raw.githubusercontent.com/mohsenhafezquran/ClashVPN/main/Clash
-
-https://github.com/ermaozi/get_subscribe \
-Clash: https://git.io/emzclash \
-https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml
 
 # Proxy v2
 https://github.com/Jsnzkpg/Jsnzkpg \
