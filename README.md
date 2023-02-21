@@ -26,7 +26,7 @@ V2Ray: https://raw.githubusercontent.com/tbbatbb/Proxy/master/dist/v2ray.config.
 
 https://github.com/kxswa/k \
 v2ray: https://kxswa.tk/v2ray \
-Clash: https://kxswa.tk/clash \
+Clash: https://kxswa.tk/clash
 
 https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash \
 v2ray:https://tt.vg/freev2 【备用】 https://freefq.neocities.org/free.txt \
@@ -39,8 +39,6 @@ V2Ray: https://raw.githubusercontent.com/vveg26/get_proxy/main/dist/v2ray.config
 https://sub.id9.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fraw.githubusercontent.com%2FJsnzkpg%2FJsnzkpg%2FJsnzkpg%2FJsnzkpg&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini
 
 https://sub.xeton.dev/sub?target=clash&new_name=true&url=https%3A%2F%2Ffreefq.neocities.org%2Ffree.txt&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Mini.ini
-
-https://kxswa.tk/clash
 
 https://github.com/anaer/Sub \
 Clash: https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml \
