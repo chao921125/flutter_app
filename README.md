@@ -65,3 +65,16 @@ https://github.com/Pawdroid/Free-servers \
 https://raw.fastgit.org/Pawdroid/Free-servers/main/sub
 
 # 节点池
+Base64 https://sub.nicevpn.top/long
+小火箭 https://sub.nicevpn.top/https
+Clash https://sub.nicevpn.top/Clash.yaml
+Quanx https://sub.nicevpn.top/Quanx.conf
+
+Base64 https://raw.fastgit.org/Pawdroid/Free-servers/main/sub
+
+Clash客户端
+https://raw.githubusercontent.com/igeekshare/GeekshareFreeNode/main/clash/Geekshare.yaml
+V2ray / Shadowrocket
+https://raw.githubusercontent.com/igeekshare/GeekshareFreeNode/main/v2ray/Geekshare.txt
+
+Base64 https://raw.fastgit.org/freefq/free/master/v2
