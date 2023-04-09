@@ -78,3 +78,4 @@ V2ray / Shadowrocket
 https://raw.githubusercontent.com/igeekshare/GeekshareFreeNode/main/v2ray/Geekshare.txt
 
 Base64 https://raw.fastgit.org/freefq/free/master/v2
+
