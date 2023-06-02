@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 100, 200, 255)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -66,6 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+  }
+
+  var word = WordPair.random();
+
+  void getRandomWord() {
+    word = WordPair.random();
   }
 
   @override
@@ -112,6 +121,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text('$word'),
+            ElevatedButton(
+              onPressed: () {
+                print('button pressed!');
+              },
+              child: Text('Next'),
             ),
           ],
         ),
