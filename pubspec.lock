@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
-  english_words:
-    dependency: "direct main"
-    description:
-      name: english_words
-      sha256: "6a7ef6473a97bd8571b6b641d006a6e58a7c67e65fb6f3d6d1151cb46b0e983c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -74,10 +66,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: aeb0b80a8b3709709c9cc496cdc027c5b3216796bc0af0ce1007eaf24464fd4c
+      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -95,10 +87,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: "6b0206b0bf4f04961fc5438198ccb3a885685cd67d4d4a32cc20ad7f8adbe015"
+      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   matcher:
     dependency: transitive
     description:
@@ -123,14 +115,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-  nested:
-    dependency: transitive
-    description:
-      name: nested
-      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -139,14 +123,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
-  provider:
-    dependency: "direct main"
-    description:
-      name: provider
-      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.5"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -210,4 +186,3 @@ packages:
     version: "2.1.4"
 sdks:
   dart: ">=3.0.2 <4.0.0"
-  flutter: ">=1.16.0"

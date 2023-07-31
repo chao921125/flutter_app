@@ -1,6 +1,3 @@
-import 'dart:html';
-
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 100, 200, 255)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -71,12 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  var word = WordPair.random();
-
-  void getRandomWord() {
-    word = WordPair.random();
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -112,22 +103,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          // You have pushed the button this many times:
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have clicked the button this many times:',
+              'You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            Text('$word'),
-            ElevatedButton(
-              onPressed: () {
-                print('button pressed!');
-              },
-              child: Text('Next'),
             ),
           ],
         ),
