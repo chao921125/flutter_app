@@ -1,44 +1,36 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const InitApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class InitApp extends StatelessWidget {
+  const InitApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Home',
+      title: 'CC APP',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
+      home: const HomePage(title: 'CC Home'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,33 +38,38 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Container(
-        decoration: const BoxDecoration(color: Colors.black12),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'You have click the button this many times:',
+      body: ListView(
+        children: [
+          Row(
+            children: [
+              Column(
+                children: [
+                  const Text(
+                    'one',
+                  ),
+                  Image.asset('assets/images/search.png', fit: BoxFit.cover),
+                  Icon(
+                    Icons.star,
+                    color: Colors.red[500],
+                  ),
+                ],
               ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              Image.asset('assets/images/search.png', fit: BoxFit.cover),
-              Icon(
-                Icons.star,
-                color: Colors.red[500],
+              Column(
+                children: [
+                  const Text(
+                    'two',
+                  ),
+                  Image.asset('assets/images/search.png', fit: BoxFit.cover),
+                  Icon(
+                    Icons.star,
+                    color: Colors.red[500],
+                  ),
+                ],
               ),
             ],
-          ),
-        ),
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
