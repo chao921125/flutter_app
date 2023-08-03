@@ -11,4 +11,6 @@ class ReColor {
   static const Color textButton = Color(0xFFF5F5F5);
   static const Color textHover = Color(0xFFF5F5F5);
   static const Color textActive = Color(0xFFF5F5F5);
+
+// static const Colors aa = [Color.fromRGBO(250, 250, 250, 1), Color.fromRGBO(250, 250, 250, 0.1)];
 }
