@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/plugins/re_color.dart';
 
 void main() {
   runApp(const InitApp());
@@ -13,10 +14,73 @@ class InitApp extends StatelessWidget {
     return MaterialApp(
       title: 'CC APP',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
+        fontFamily: "SF-Pro-Rounded",
+        colorScheme: ColorScheme.fromSeed(seedColor: ReColor.bg),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 30,
+            fontWeight: FontWeight.normal,
+          ),
+          bodyMedium: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 20,
+            fontWeight: FontWeight.normal,
+          ),
+          bodySmall: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+          ),
+          displayLarge: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 30,
+            fontWeight: FontWeight.normal,
+          ),
+          displayMedium: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 20,
+            fontWeight: FontWeight.normal,
+          ),
+          displaySmall: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+          ),
+          labelLarge: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 30,
+            fontWeight: FontWeight.normal,
+          ),
+          labelMedium: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 20,
+            fontWeight: FontWeight.normal,
+          ),
+          labelSmall: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+          ),
+          titleLarge: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 30,
+            fontWeight: FontWeight.normal,
+          ),
+          titleMedium: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 20,
+            fontWeight: FontWeight.normal,
+          ),
+          titleSmall: TextStyle(
+            fontFamily: "SF-Pro-Rounded",
+            fontSize: 12,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'CC Home'),
+      home: const HomePage(title: 'CC 服务'),
     );
   }
 }
@@ -36,7 +100,10 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
       ),
       body: ListView(
         children: [
@@ -46,6 +113,7 @@ class HomePageState extends State<HomePage> {
                 children: [
                   const Text(
                     'one',
+                    style: TextStyle(fontFamily: "SF-Pro-Rounded-Black"),
                   ),
                   Image.asset('assets/images/search.png', fit: BoxFit.cover),
                   Icon(
