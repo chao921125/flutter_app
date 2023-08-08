@@ -1,6 +1,6 @@
 # 说明
 
-# [官网](https://flutter.cn/)
+# [英文 官网](https://flutter.dev/) [中文 官网](https://flutter.cn/)
 
 # [组件库](https://pub.dev/)
 
