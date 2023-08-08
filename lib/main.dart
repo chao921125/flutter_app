@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/plugins/re_color.dart';
+import 'package:flutter_application/tab_bar/home.dart';
 
+// app 入口
 void main() {
   runApp(const InitApp());
 }
 
+// 配置 app 全局的主题等
 class InitApp extends StatelessWidget {
   const InitApp({super.key});
 
@@ -12,7 +15,7 @@ class InitApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CC APP',
+      title: 'CC NET',
       theme: ThemeData(
         fontFamily: "SF-Pro-Rounded",
         colorScheme: ColorScheme.fromSeed(seedColor: ReColor.bg),
@@ -80,64 +83,7 @@ class InitApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'CC 服务'),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<HomePage> createState() => HomePageState();
-}
-
-class HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(
-          widget.title,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-      ),
-      body: ListView(
-        children: [
-          Row(
-            children: [
-              Column(
-                children: [
-                  const Text(
-                    'one',
-                    style: TextStyle(fontFamily: "SF-Pro-Rounded-Black"),
-                  ),
-                  Image.asset('assets/images/search.png', fit: BoxFit.cover),
-                  Icon(
-                    Icons.star,
-                    color: Colors.red[500],
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  const Text(
-                    'two',
-                  ),
-                  Image.asset('assets/images/search.png', fit: BoxFit.cover),
-                  Icon(
-                    Icons.star,
-                    color: Colors.red[500],
-                  ),
-                ],
-              ),
-            ],
-          )
-        ],
-      ),
+      home: const Home(title: 'CC NET'),
     );
   }
 }
