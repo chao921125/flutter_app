@@ -12,6 +12,7 @@ class MyPageState extends State<MyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Center(
           child: Text(
             '我的',
@@ -20,13 +21,9 @@ class MyPageState extends State<MyPage> {
         ),
       ),
       body: ListView(
-        children: [
-          ListView(
-            children: const [
-              Row(
-                children: [Text("My")],
-              ),
-            ],
+        children: const [
+          Row(
+            children: [Text("My")],
           ),
         ],
       ),

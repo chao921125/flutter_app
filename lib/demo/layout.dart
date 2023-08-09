@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cc/plugins/re_color.dart';
 
 void main() {
-  runApp(const InitApp());
+  runApp(const DemoLayout());
 }
 
-class InitApp extends StatelessWidget {
-  const InitApp({super.key});
+class DemoLayout extends StatelessWidget {
+  const DemoLayout({super.key});
 
   // This widget is the root of your application.
   @override
@@ -80,21 +80,21 @@ class InitApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'CC NET'),
+      home: const DemoLayoutPage(title: 'CC NET'),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
+class DemoLayoutPage extends StatefulWidget {
+  const DemoLayoutPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<HomePage> createState() => HomePageState();
+  State<DemoLayoutPage> createState() => DemoLayoutPageState();
 }
 
-class HomePageState extends State<HomePage> {
+class DemoLayoutPageState extends State<DemoLayoutPage> {
   Widget banner = Container(
     padding: const EdgeInsets.all(12),
     child: const Column(
