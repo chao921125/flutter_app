@@ -2,44 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'my.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key, required this.title});
-
-  final String title;
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Home> createState() => HomeState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            widget.title,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-        ),
-      ),
-      body: ListView(
-        children: [
-          banner,
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const My(title: 'My Info')),
-                );
-              },
-              child: const Text("to my"))
-        ],
-      ),
-    );
-  }
-
+class HomePageState extends State<HomePage> {
   Widget banner = ListView(
     scrollDirection: Axis.horizontal,
     children: [
@@ -65,4 +35,31 @@ class HomeState extends State<Home> {
       ),
     ],
   );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            '首页',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ),
+      ),
+      body: ListView(
+        children: [
+          banner,
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyPage()),
+                );
+              },
+              child: const Text("to my")),
+        ],
+      ),
+    );
+  }
 }

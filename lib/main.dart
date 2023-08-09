@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/plugins/re_color.dart';
 import 'package:flutter_application/tab_bar/home.dart';
 
-// app 入口
 void main() {
   runApp(const InitApp());
 }
 
-// 配置 app 全局的主题等
 class InitApp extends StatelessWidget {
   const InitApp({super.key});
 
@@ -83,7 +81,7 @@ class InitApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Home(title: 'CC NET'),
+      home: const HomePage(),
     );
   }
 }
