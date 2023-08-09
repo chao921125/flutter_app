@@ -1,1 +1,5 @@
-
+class TabBarPage {
+  // BottomNavigationBar(
+  //   items: [],
+  // )
+}

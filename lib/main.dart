@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/plugins/re_color.dart';
-import 'package:flutter_application/tab_bar/home.dart';
+import 'package:flutter_cc/config/router.dart';
+import 'package:flutter_cc/plugins/re_color.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-// app 入口
 void main() {
   runApp(const InitApp());
 }
 
-// 配置 app 全局的主题等
 class InitApp extends StatelessWidget {
   const InitApp({super.key});
 
-  // This widget is the root of your application.
+// This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'CC NET',
       theme: ThemeData(
         fontFamily: "SF-Pro-Rounded",
@@ -83,7 +82,14 @@ class InitApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Home(title: 'CC NET'),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => const HomePage(),
+      //   '/my': (context) => const MyPage(),
+      // },
+      initialRoute: RouterName.index,
+      getPages: RouterPage.pages,
+      // home: const HomePage(),
     );
   }
 }

@@ -1,68 +1,145 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cc/config/router.dart';
+import 'package:get/get.dart';
 
-import 'my.dart';
-
-class Home extends StatefulWidget {
-  const Home({super.key, required this.title});
-
-  final String title;
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Home> createState() => HomeState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class HomeState extends State<Home> {
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            widget.title,
-            style: Theme.of(context).textTheme.titleMedium,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Center(
+            child: Text(
+              '首页',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+          ),
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
           ),
         ),
-      ),
-      body: ListView(
-        children: [
-          banner,
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const My(title: 'My Info')),
-                );
-              },
-              child: const Text("to my"))
-        ],
+        body: ListView(
+          children: [
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(RouterName.my);
+                  },
+                  child: const Text("to my"),
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        const Text(
+                          'one',
+                          style: TextStyle(fontFamily: "SF-Pro-Rounded-Black"),
+                        ),
+                        Image.asset('assets/images/search.png',
+                            fit: BoxFit.cover),
+                        Icon(
+                          Icons.star,
+                          color: Colors.red[500],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        const Text(
+                          'two',
+                        ),
+                        Image.asset('assets/images/search.png',
+                            fit: BoxFit.cover),
+                        Icon(
+                          Icons.star,
+                          color: Colors.red[500],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        const Text(
+                          'one',
+                          style: TextStyle(fontFamily: "SF-Pro-Rounded-Black"),
+                        ),
+                        Image.asset('assets/images/search.png',
+                            fit: BoxFit.cover),
+                        Icon(
+                          Icons.star,
+                          color: Colors.red[500],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        const Text(
+                          'two',
+                        ),
+                        Image.asset('assets/images/search.png',
+                            fit: BoxFit.cover),
+                        Icon(
+                          Icons.star,
+                          color: Colors.red[500],
+                        ),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                const Text(
+                                  'one',
+                                  style: TextStyle(
+                                      fontFamily: "SF-Pro-Rounded-Black"),
+                                ),
+                                Image.asset('assets/images/search.png',
+                                    fit: BoxFit.cover),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.red[500],
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                const Text(
+                                  'two',
+                                ),
+                                Image.asset('assets/images/search.png',
+                                    fit: BoxFit.cover),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.red[500],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
-
-  Widget banner = ListView(
-    scrollDirection: Axis.horizontal,
-    children: [
-      Container(
-        width: 160,
-        color: Colors.red,
-      ),
-      Container(
-        width: 160,
-        color: Colors.blue,
-      ),
-      Container(
-        width: 160,
-        color: Colors.green,
-      ),
-      Container(
-        width: 160,
-        color: Colors.yellow,
-      ),
-      Container(
-        width: 160,
-        color: Colors.orange,
-      ),
-    ],
-  );
 }

@@ -1,34 +1,29 @@
 import 'package:flutter/material.dart';
 
-class My extends StatefulWidget {
-  const My({super.key, required this.title});
-
-  final String title;
+class MyPage extends StatefulWidget {
+  const MyPage({super.key});
 
   @override
-  State createState() => MyState();
+  State<MyPage> createState() => MyPageState();
 }
 
-class MyState extends State<My> {
+class MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Center(
           child: Text(
-            widget.title,
+            '我的',
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
       ),
       body: ListView(
-        children: [
-          ListView(
-            children: const [
-              Row(
-                children: [Text("My")],
-              ),
-            ],
+        children: const [
+          Row(
+            children: [Text("My")],
           ),
         ],
       ),

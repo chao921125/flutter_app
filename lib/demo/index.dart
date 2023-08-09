@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Index());
+  runApp(const DemoIndex());
 }
 
-class Index extends StatelessWidget {
-  const Index({super.key});
+class DemoIndex extends StatelessWidget {
+  const DemoIndex({super.key});
 
   // This widget is the root of your application.
   @override
@@ -16,21 +16,21 @@ class Index extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Home Page'),
+      home: const DemoPage(title: 'Flutter Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class DemoPage extends StatefulWidget {
+  const DemoPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<DemoPage> createState() => _DemoPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _DemoPageState extends State<DemoPage> {
   int _counter = 0;
 
   void _incrementCounter() {
