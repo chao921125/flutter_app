@@ -60,7 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
+    - lib/assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -76,19 +76,19 @@ flutter:
   fonts:
     - family: SF-Pro-Rounded
       fonts:
-        - asset: assets/fonts/SF-Pro-Rounded-Regular.ttf
-        - asset: assets/fonts/SF-Pro-Rounded-Light.ttf
+        - asset: lib/assets/fonts/SF-Pro-Rounded-Regular.ttf
+        - asset: lib/assets/fonts/SF-Pro-Rounded-Light.ttf
     - family: SF-Pro-Rounded-Bold
       fonts:
-        - asset: assets/fonts/SF-Pro-Rounded-Bold.ttf
+        - asset: lib/assets/fonts/SF-Pro-Rounded-Bold.ttf
           weight: 800
     - family: SF-Pro-Rounded-Black
       fonts:
-        - asset: assets/fonts/SF-Pro-Rounded-Black.ttf
+        - asset: lib/assets/fonts/SF-Pro-Rounded-Black.ttf
           weight: 700
     - family: SF-Pro-Rounded-Italic
       fonts:
-        - asset: assets/fonts/SF-Pro-Rounded-Medium.ttf
+        - asset: lib/assets/fonts/SF-Pro-Rounded-Medium.ttf
           style: italic
   #
   # For details regarding fonts from package dependencies,

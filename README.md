@@ -1,10 +1,10 @@
 # 说明
 
-| 官网                            | 插件                                                       | 教程                                                              |
-|-------------------------------|----------------------------------------------------------|-----------------------------------------------------------------|
-| [英文 官网](https://flutter.dev/) | [组件库](https://pub.dev/)                                  | [示例 视频教程](https://github.com/iampawan/FlutterExampleApps)       |
-| [中文 官网](https://flutter.cn/)  | [组件库](https://github.com/Solido/awesome-flutter)         | [learning](https://github.com/AweiLoveAndroid/Flutter-learning) |
-|                               | [组件库 ](https://github.com/samarthagarwal/FlutterScreens) |                                                                 |
+| 官网                            | 插件                                                       | 教程                                                        |
+|-------------------------------|----------------------------------------------------------|-----------------------------------------------------------|
+| [英文 官网](https://flutter.dev/) | [组件库](https://pub.dev/)                                  | [示例 视频教程](https://github.com/iampawan/FlutterExampleApps) |
+| [中文 官网](https://flutter.cn/)  | [组件库](https://github.com/Solido/awesome-flutter)         |                                                           |
+|                               | [组件库 ](https://github.com/samarthagarwal/FlutterScreens) |                                                           |
 
 ```bash
 # 打开ios模拟器
@@ -31,5 +31,7 @@ open -a Simulator
 | [消息卡片](https://github.com/janoodleFTW/timy-messenger)               |
 | [Twitter 克隆](https://github.com/TheAlphamerc/flutter_twitter_clone) |
 | [豆瓣 克隆](https://github.com/kaina404/FlutterDouBan)                  |
-| [ ](https://github.com/CarGuo/gsy_github_app_flutter)               |
+| [---](https://github.com/CarGuo/gsy_github_app_flutter)             |
+| [examples](https://github.com/nisrulz/flutter-examples)             |
+| [---](https://github.com/AweiLoveAndroid/Flutter-learning)          |
 | []()                                                                |
