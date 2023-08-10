@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/config/router.dart';
+import 'package:flutter_cc/layout/tab_bar.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,14 +34,19 @@ class HomePageState extends State<HomePage> {
         ),
         body: ListView(
           children: [
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(RouterName.contact);
+              },
+              child: const Text(
+                "跳转获取联系人",
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+              ),
+            ),
             Row(
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed(RouterName.my);
-                  },
-                  child: const Text("to my"),
-                ),
                 Row(
                   children: [
                     Column(
@@ -139,6 +145,7 @@ class HomePageState extends State<HomePage> {
             ),
           ],
         ),
+        bottomNavigationBar: TabBarPage.getTabBar(0),
       ),
     );
   }

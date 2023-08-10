@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/plugins/re_color.dart';
+import 'package:flutter_cc/config/re_color.dart';
 
 void main() {
   runApp(const DemoLayout());

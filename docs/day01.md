@@ -22,4 +22,5 @@
         IOS MacOS系统自带的Xcode，Windows系统下参考：https://learn.microsoft.com/zh-cn/dotnet/maui/ios/remote-simulator
 7、开发工具安装 Flutter 和 Dart 插件，安装插件之后如果提示找不到 Dart 或者 Flutter，需要在开发工具里面配置
 8、创建 Flutter 项目（应用）并运行到模拟器或真机
+9、安装包后，配置权限失败的情况下，使用 flutter clean 清理后再安装重启
 ```
