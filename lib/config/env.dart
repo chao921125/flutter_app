@@ -44,19 +44,17 @@ class Env {
     appVersion: "",
   );
 
-  static IEnv get getEnv => _getEnv();
-
   // 根据不同环境返回对应的环境配置
-  static IEnv _getEnv() {
-    switch (appEnv) {
-      case EnvConfig.local:
-        return _localConfig;
-      case EnvConfig.test:
-        return _testConfig;
-      case EnvConfig.release:
-        return _releaseConfig;
-      default:
-        return _localConfig;
-    }
-  }
+  static IEnv Function() get getEnv => () {
+        switch (appEnv) {
+          case EnvConfig.local:
+            return _localConfig;
+          case EnvConfig.test:
+            return _testConfig;
+          case EnvConfig.release:
+            return _releaseConfig;
+          default:
+            return _localConfig;
+        }
+      };
 }

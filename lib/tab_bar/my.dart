@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../layout/tab_bar.dart';
+
 class MyPage extends StatefulWidget {
   const MyPage({super.key});
 
@@ -27,6 +29,7 @@ class MyPageState extends State<MyPage> {
           ),
         ],
       ),
+      bottomNavigationBar: TabBarPage.getTabBar(1),
     );
   }
 }

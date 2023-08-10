@@ -1,20 +1,20 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/config/router.dart';
 import 'package:get/get.dart';
 
-class TabBarPage {
+class TabBarConvexPage {
   static Function(int index) get getTabBar => (int index) {
-        return BottomNavigationBar(
-          currentIndex: index,
+        return ConvexAppBar(
           items: const [
-            BottomNavigationBarItem(
+            TabItem(
               icon: Icon(Icons.title),
-              label: '首页',
+              title: '首页',
             ),
-            BottomNavigationBarItem(
+            TabItem(
               icon: Icon(Icons.favorite),
-              label: '我',
+              title: '我',
             ),
           ],
           onTap: (int index) {
