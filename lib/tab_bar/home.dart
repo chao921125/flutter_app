@@ -36,10 +36,10 @@ class HomePageState extends State<HomePage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                Get.toNamed(RouterName.my);
+                Get.toNamed(RouterName.contact);
               },
               child: const Text(
-                "跳转个人中心",
+                "跳转获取联系人",
                 style: TextStyle(
                   fontSize: 14,
                 ),

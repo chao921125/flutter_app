@@ -34,10 +34,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   # UI toast 提示
   fluttertoast: ^8.2.2
-  # 路由及状态管理
+  # UI tab-bar 按钮
+  convex_bottom_bar: ^3.2.0
+  # core 路由及状态管理
   get: ^4.6.5
-  # 权限包
+  # permission 权限 权限判断及获取
   permission_handler: ^10.4.3
+  # permission 获取通讯录 权限判断
+  flutter_contacts: ^1.1.7+1
   # google 关联登录
   google_sign_in: ^6.1.4
   # 屏幕适配方案
