@@ -20,6 +20,6 @@
     模拟器：
         Android 模拟器可以选择国产的，但建议大家选择使用Android Studio内置的避免一些不必要的麻烦
         IOS MacOS系统自带的Xcode，Windows系统下参考：https://learn.microsoft.com/zh-cn/dotnet/maui/ios/remote-simulator
-7、开发工具安装 Flutter 和 Dart 插件
+7、开发工具安装 Flutter 和 Dart 插件，安装插件之后如果提示找不到 Dart 或者 Flutter，需要在开发工具里面配置
 8、创建 Flutter 项目（应用）并运行到模拟器或真机
 ```
