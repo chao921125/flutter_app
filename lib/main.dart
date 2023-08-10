@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cc/config/re_color.dart';
 import 'package:flutter_cc/config/router.dart';
-import 'package:flutter_cc/plugins/re_color.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
