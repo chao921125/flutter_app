@@ -12,7 +12,12 @@ class ApiContactPage extends StatefulWidget {
 
 class ApiContactPageState extends State<ApiContactPage> {
   List<Contact> contactList = [];
-  List<Widget> _getContactList() {
+  String contactStr = '';
+  List<Widget> _getContactList(listData) {
+    setState(() {
+      contactList = listData;
+      contactStr = listData.toString();
+    });
     List<Widget> list = [];
     return list;
   }
@@ -36,8 +41,8 @@ class ApiContactPageState extends State<ApiContactPage> {
               Permissions.checkPermission(
                 permissionList: [Permission.contacts],
                 onSuccess: () async {
-                  contactList = await FlutterContacts.getContacts(
-                      withProperties: true, withPhoto: true);
+                  _getContactList(await FlutterContacts.getContacts(
+                      withProperties: true, withPhoto: true));
                 },
                 onFailed: () {
                   Permissions.requestPermission([Permission.contacts]);
@@ -52,13 +57,10 @@ class ApiContactPageState extends State<ApiContactPage> {
               ),
             ),
           ),
-          const Column(
+          Column(
             children: [
-              Row(
-                children: [Text("data1"), Text("data11")],
-              ),
-              Row(
-                children: [Text("data2")],
+              Container(
+                child: Text("获取到的联系人： $contactStr"),
               ),
             ],
           )
