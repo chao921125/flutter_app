@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/config/re_color.dart';
 import 'package:flutter_cc/config/router.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const InitApp());
 }
 
@@ -13,6 +16,7 @@ class InitApp extends StatelessWidget {
 // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    FlutterNativeSplash.remove();
     return GetMaterialApp(
       title: 'CC NET',
       theme: ThemeData(

@@ -8,9 +8,9 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-
+    <!-- 应用图标/应用名称 -->
     <application
-        android:label="flutter_cc"
+        android:label="CC"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

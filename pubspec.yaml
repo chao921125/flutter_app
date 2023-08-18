@@ -46,6 +46,8 @@ dependencies:
   google_sign_in: ^6.1.4
   # 屏幕适配方案
   flutter_screenutil: ^5.8.4
+  # 开屏页
+  flutter_native_splash: ^2.3.2
 
 dev_dependencies:
   flutter_test:

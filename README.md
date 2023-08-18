@@ -18,6 +18,9 @@ open -a Simulator
 1、修改[pubspec.yaml](pubspec.yaml)，配置三方包/图片/字体等资源
 2、在lib中编写页面/组件
 3、在assets中存放各种静态资源
+4、修改应用名称 https://juejin.cn/post/7220688635142455356
+    Android：android/app/src/main/AndroidManifest.xml <application> android:label
+    IOS：ios/Runner/Info.plist CFBundleDisplayName 
 ```
 
 # 优秀项目推荐
