@@ -6,10 +6,10 @@ class MyPage extends StatefulWidget {
   const MyPage({super.key});
 
   @override
-  State<MyPage> createState() => MyPageState();
+  State<MyPage> createState() => _MyPageState();
 }
 
-class MyPageState extends State<MyPage> {
+class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
