@@ -222,3 +222,23 @@ class _DemoPageState extends State<DemoPage> {
   }
 }
 ```
+```text
+最后我们创建一个StatelessWidget作为入口文件，实现一个MaterialApp将上方的DemoPage设置为home页面，通过main入口执行页面。
+```
+```dart
+import 'package:flutter/material.dart';
+import 'package:gsy_github_app_flutter/test/DemoPage.dart';
+
+void main() {
+  runApp(new DemoApp());
+}
+
+class DemoApp extends StatelessWidget {
+  DemoApp({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(home: DemoPage());
+  }
+}
+```
