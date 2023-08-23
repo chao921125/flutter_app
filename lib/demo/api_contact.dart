@@ -10,10 +10,11 @@ class ApiContactPage extends StatefulWidget {
   const ApiContactPage({super.key});
 
   @override
-  State<ApiContactPage> createState() => ApiContactPageState();
+  State<ApiContactPage> createState() => _ApiContactPageState();
 }
 
-class ApiContactPageState extends State<ApiContactPage> {
+// @protected
+class _ApiContactPageState extends State<ApiContactPage> {
   @override
   void initState() {
     super.initState();

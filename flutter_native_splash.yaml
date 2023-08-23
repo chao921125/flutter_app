@@ -1,0 +1,29 @@
+# 开屏页
+flutter_native_splash:
+  # 创建自定义开屏 flutter_native_splash.yaml 无需添加
+  # flutter pub run flutter_native_splash:create --path=/xx/xx.yaml
+  # 恢复默认开屏
+  # flutter pub run flutter_native_splash:remove
+
+  # image参数允许您指定启动屏幕中使用的图像。它一定是png文件，大小应为4倍像素密度。
+  image: assets/logo/logo.png
+
+  # color或background_image是唯一需要的参数。使用颜色设置背景将您的启动屏幕的颜色转换为纯色。使用background_image设置启动屏幕为png图像。这对于渐变非常有用。图像将被拉伸到应用程序的大小。只能使用一个参数，不能同时设置color和background_image。
+  #  color: "#FFFFFF"
+  background_image: assets/logo/logo.png
+
+  # 品牌属性允许您指定在启动屏幕中用作品牌的图像。它必须是一个png文件。它支持Android、iOS和Web。对于Android 12，请参阅下面的Android 12部分。
+  branding: assets/logo/logo.png
+  # 要将品牌图像定位在屏幕底部，可以使用bottom、bottomRight、，和左下方。如果未指定或未指定其他内容，则默认值为底部。
+#  branding_mode: bottom
+
+  # 对应的暗黑主题
+  #color_dark: "#042a49"
+  #background_image_dark: "assets/dark-background.png"
+  #image_dark: assets/splash-invert.png
+  #branding_dark: assets/dart_dark.png
+
+  android_12:
+    image: assets/logo/logo.png
+    color: "#40E0D0"
+    icon_background_color: "#FFFFFF"
