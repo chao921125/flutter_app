@@ -10,6 +10,12 @@
 # 打开ios模拟器
 
 open -a Simulator
+
+# 安装
+# 在Windows环境下如果执行flutter doctor报安卓sdk相关的错误，一般情况下是自行修改了sdk目录请执行以下代码
+flutter config --android-sdk <path where you saved Android studio SDK>
+# 比如
+flutter config --android-sdk D:/path/SDK
 ```
 
 # 开发
