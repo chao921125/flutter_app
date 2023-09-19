@@ -10,6 +10,20 @@
 # 打开ios模拟器
 
 open -a Simulator
+
+# 安装 建议将 flutter SDK利用git的方式下载到本地无论是Mac还是WIN
+# 1、在Windows环境下如果执行flutter doctor报安卓sdk相关的错误，一般情况下是自行修改了sdk目录请执行以下代码
+flutter config --android-sdk <path where you saved Android studio SDK>
+# 比如
+flutter config --android-sdk D:/path/SDK
+# 2、Network resources
+#   将 *\flutter\packages\flutter_tools\lib\src\http_host_validator.dart 文件中的 const String kMaven = 'https://maven.google.com/'; 修改为 const String kMaven = 'https://dl.google.com/dl/android/maven2/';
+#   然后再删除 *\flutter\bin\cache
+# 3、代理地址
+# https://maven.aliyun.com/repository/google/
+# https://maven.aliyun.com/repository/gradle-plugin/
+# https://maven.aliyun.com/repository/public/
+# https://maven.aliyun.com/repository/jcenter/
 ```
 
 # 开发
