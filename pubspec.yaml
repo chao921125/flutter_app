@@ -31,21 +31,21 @@ dependencies:
     sdk: flutter
 
   # UI 下面将 Cupertino Icons 字体添加到您的应用程序中。与 iOS 样式图标的 CupertinoIcons 类一起使用。
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
   # UI toast 提示
   fluttertoast: ^8.2.2
   # UI tab-bar 按钮
   convex_bottom_bar: ^3.2.0
   # core 路由及状态管理
-  get: ^4.6.5
+  get: ^4.6.6
   # permission 权限 权限判断及获取
-  permission_handler: ^10.4.3
+  permission_handler: ^11.0.0
   # permission 获取通讯录 权限判断
   flutter_contacts: ^1.1.7+1
   # google 关联登录
-  google_sign_in: ^6.1.4
+  google_sign_in: ^6.1.5
   # 屏幕适配方案
-  flutter_screenutil: ^5.8.4
+  flutter_screenutil: ^5.9.0
   # 开屏页
   flutter_native_splash: ^2.3.2
 
@@ -58,7 +58,7 @@ dev_dependencies:
   # 在位于根目录的 `analysis_options.yaml` 文件中激活
   # 包裹。 有关停用特定 lint 的信息，请参阅该文件
   # 规则并激活其他规则。
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.3
 
 # 有关此文件的通用 Dart 部分的信息，请参阅
 # 以下页面：https://dart.dev/tools/pub/pubspec
